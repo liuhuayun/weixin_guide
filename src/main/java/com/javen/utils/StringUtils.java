@@ -11,8 +11,6 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  * 字符串工具类，继承lang3字符串工具类
- * @author Javen
- * 2016年4月3日
  */
 public final class StringUtils extends org.apache.commons.lang3.StringUtils {
 

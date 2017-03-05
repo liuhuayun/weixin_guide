@@ -1,30 +1,46 @@
 <ehcache updateCheck="false" dynamicConfig="false">
 	<diskStore path="java.io.tmpdir"/>
-
-	<!-- 模拟session，用于用户状态 -->
-	<!-- 存放用户登录信息，过期时间 3600秒，用ehache替换session功能 -->
-    <cache name="session"
-           maxElementsInMemory="10000"
-           maxElementsOnDisk="100000"
-           eternal="false"
-           timeToIdleSeconds="3600"
-           timeToLiveSeconds="0"
-           overflowToDisk="true"
-           diskPersistent="true"
-            />
 	
+	<!-- 模拟session，用于用户状态，缓存10分钟 -->
+	<cache name="session"
+		maxElementsInMemory="2000"
+		eternal="false"
+		timeToIdleSeconds="600"
+		timeToLiveSeconds="600"
+		overflowToDisk="false"
+		diskPersistent="false"
+	/>
 	
-	<!-- 缓存10分钟 -->
-    <cache name="tenMinute"
-           maxElementsInMemory="10000"
-           maxElementsOnDisk="100000"
-           eternal="false"
-           timeToIdleSeconds="600"
-           timeToLiveSeconds="0"
-           overflowToDisk="true"
-           diskPersistent="true"
-            />
-            
+	<!-- 缓存半小时 -->
+	<cache name="halfHour" 
+		maxElementsInMemory="10000"
+		maxElementsOnDisk="100000" 
+		eternal="false" 
+		timeToIdleSeconds="1800"
+		timeToLiveSeconds="0" 
+		overflowToDisk="false" 
+		diskPersistent="false" />
+		
+	<!-- 缓存一小时 -->
+	<cache name="hour" 
+		maxElementsInMemory="10000"
+		maxElementsOnDisk="100000" 
+		eternal="false" 
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="0" 
+		overflowToDisk="false" 
+		diskPersistent="false" />
+	
+	<!-- 缓存一天 -->
+	<cache name="oneDay" 
+		maxElementsInMemory="10000"
+		maxElementsOnDisk="100000" 
+		eternal="false" 
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="0" 
+		overflowToDisk="false" 
+		diskPersistent="false" />
+	
 	<!--
 		name:缓存名称。
 		maxElementsInMemory：缓存最大个数。
@@ -45,7 +61,7 @@
 		timeToIdleSeconds="120"
 		timeToLiveSeconds="120"
 		overflowToDisk="true"
-		maxElementsOnDisk="10000000"
+		maxElementsOnDisk="100000"
 		diskPersistent="false"
 		diskExpiryThreadIntervalSeconds="120"
 		memoryStoreEvictionPolicy="LRU"

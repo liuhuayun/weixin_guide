@@ -6,28 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
-import com.javen.alipay.AliPayController;
-import com.javen.controller.AjaxController;
-import com.javen.controller.AjaxFileContorlller;
-import com.javen.controller.AllPayController;
-import com.javen.controller.ConstellationController;
-import com.javen.controller.FileController;
-import com.javen.controller.IndexController;
-import com.javen.controller.JSSDKController;
-import com.javen.controller.TUserController;
-import com.javen.model.Course;
-import com.javen.model.Idea;
-import com.javen.model.Order;
-import com.javen.model.Stock;
-import com.javen.model.TUser;
-import com.javen.model.Users;
-import com.javen.weixin.controller.RedPackApiController;
-import com.javen.weixin.controller.WeiXinOauthController;
-import com.javen.weixin.controller.WeixinApiController;
-import com.javen.weixin.controller.WeixinMsgController;
-import com.javen.weixin.controller.WeixinPayController;
-import com.javen.weixin.controller.WeixinTransfersController;
-import com.javen.weixin.user.UserController;
+import com.javen.ext.plugin.log.Slf4jLogFactory;
+import com.javen.model._MappingKit;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -38,7 +18,6 @@ import com.jfinal.core.JFinal;
 import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Log;
-import com.jfinal.plugin.SchedulerPlugin;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.druid.DruidStatViewHandler;
@@ -52,7 +31,7 @@ import com.jfinal.weixin.sdk.api.ApiConfigKit;
  * @author Javen
  */
 public class APPConfig extends JFinalConfig {
-	static Log log = Log.getLog(WeixinMsgController.class);
+	static Log log = Log.getLog(APPConfig.class);
 
 	/**
 	 * 如果生产环境配置文件存在，则优先加载该配置，否则加载开发环境配置文件
@@ -75,12 +54,16 @@ public class APPConfig extends JFinalConfig {
 	 */
 	public void configConstant(Constants me) {
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
-		loadProp("javen_config_pro.txt", "javen_config.txt");
+		loadProp("config_pro.properties", "config.properties");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
 		me.setEncoding("utf-8");
 		me.setViewType(ViewType.JSP);
+		// 修改文件上传的默认限制
+		me.setMaxPostSize(1024 * 1024 * 200);
 		// 设置上传文件保存的路径
-		me.setBaseUploadPath(PathKit.getWebRootPath() + File.separator + "myupload");
+		me.setBaseUploadPath(PathKit.getWebRootPath() + File.separator + "upload");
+		// 设置Slf4日志
+		me.setLogFactory(new Slf4jLogFactory());
 		// ApiConfigKit 设为开发模式可以在开发阶段输出请求交互的 xml 与 json 数据
 		ApiConfigKit.setDevMode(me.getDevMode());
 
@@ -90,26 +73,7 @@ public class APPConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		// 微信
-		me.add("/msg", WeixinMsgController.class);
-		me.add("/api", WeixinApiController.class);
-		me.add("/oauth", WeiXinOauthController.class);
-		me.add("/jssdk", JSSDKController.class, "/view");
-		// 可以去掉 /front
-		me.add("/pay", WeixinPayController.class, "/view");
-		me.add("/", IndexController.class, "/front");
-		me.add("/tuser", TUserController.class, "/back");
-
-		me.add("/ajax", AjaxController.class);
-		me.add("/constellation", ConstellationController.class, "/front");
-		me.add("/wxuser", UserController.class, "/front");
-		me.add("/file", FileController.class, "/front");
-		me.add("/ajaxfile", AjaxFileContorlller.class, "/front");
-
-		me.add("/read", RedPackApiController.class);
-		me.add("/transfers", WeixinTransfersController.class);
-		me.add("/alipay", AliPayController.class);
-		me.add("/allpay", AllPayController.class);
+		
 	}
 
 	/**
@@ -122,20 +86,12 @@ public class APPConfig extends JFinalConfig {
 
 		// 配置ActiveRecord插件
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
-		arp.addMapping("course", Course.class);
-		arp.addMapping("orders", Order.class);
-		arp.addMapping("users", "id", Users.class);
-		arp.addMapping("Tuser", TUser.class);
-		arp.addMapping("stock", Stock.class);
-		arp.addMapping("idea", Idea.class);
+		_MappingKit.mapping(arp);
 		arp.setShowSql(PropKit.getBoolean("devMode", false));
 		me.add(arp);
 
 		// ehcahce插件配置
 		me.add(new EhCachePlugin());
-
-		SchedulerPlugin sp = new SchedulerPlugin("job.properties");
-		me.add(sp);
 	}
 
 	public static DruidPlugin createDruidPlugin() {

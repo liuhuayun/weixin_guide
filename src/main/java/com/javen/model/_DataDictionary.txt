@@ -1,0 +1,91 @@
+Table: wx_articles
+------------+---------------+------+-----+---------+---------
+ Field      | Type          | Null | Key | Default | Remarks 
+------------+---------------+------+-----+---------+---------
+ id         | INT(10)       | NO   | PRI |         | 编号      
+ appId      | VARCHAR(255)  | NO   |     |         | appId   
+ type       | BIT           | NO   |     | 0       | 类别(0 文本 1 链接)
+ title      | VARCHAR(255)  | NO   |     |         | 标题      
+ describe   | TINYTEXT(255) | YES  |     |         | 文章描述    
+ author     | VARCHAR(255)  | YES  |     |         |         
+ content    | TEXT(65535)   | NO   |     |         | 文章内容    
+ url        | VARCHAR(255)  | YES  |     |         | 文章链接    
+ imageUrl   | VARCHAR(255)  | YES  |     |         | 封面      
+ sort       | INT(10)       | YES  |     | 1       | 排序      
+ tags       | VARCHAR(255)  | YES  |     |         | 标签      
+ crateTime  | DATETIME(19)  | YES  |     |         | 创建时间    
+ updateTime | DATETIME(19)  | YES  |     |         | 更新时间    
+ remark     | VARCHAR(255)  | YES  |     |         | 备注      
+------------+---------------+------+-----+---------+---------
+
+Table: wx_config
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ id             | INT(10)      | NO   | PRI |         | 编号      
+ sysuid         | INT(10)      | YES  |     |         | 系统用户ID  
+ appId          | VARCHAR(255) | NO   |     |         | appId   
+ appSecret      | VARCHAR(255) | NO   |     |         | appSecret
+ token          | VARCHAR(255) | NO   |     | Javen   | token   
+ encryptMessage | BIT          | YES  |     | 0       | 是否加密    
+ encodingAesKey | VARCHAR(255) | YES  |     |         | 随机数     
+ mchId          | VARCHAR(255) | YES  |     |         | 商户ID    
+ paternerKey    | VARCHAR(255) | YES  |     |         | 密钥设置    
+ certPath       | VARCHAR(255) | YES  |     |         | 证书路径    
+ domain         | VARCHAR(255) | YES  |     |         | 授权域名    
+ status         | BIT          | NO   |     | 1       | 激活      
+ uuid           | VARCHAR(255) | NO   |     |         | 唯一识别    
+ creatTime      | DATETIME(19) | YES  |     |         | 创建时间    
+ updateTime     | DATETIME(19) | YES  |     |         | 更新时间    
+ remake         | VARCHAR(255) | NO   |     |         | 备注      
+----------------+--------------+------+-----+---------+---------
+
+Table: wx_keyword
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 编号      
+ appId      | VARCHAR(255) | YES  |     |         | appId   
+ replyType  | TINYINT(3)   | YES  |     | 1       | 关注回复类型 1、文本 2、图文  3、图片 4、发红包
+ keyWord    | VARCHAR(255) | NO   |     |         |         
+ content    | TEXT(65535)  | YES  |     |         | 回复内容    
+ createTime | DATETIME(19) | YES  |     |         | 创建时间    
+ updateTime | DATETIME(19) | YES  |     |         | 更新时间    
+ remake     | VARCHAR(255) | YES  |     |         | 备注      
+------------+--------------+------+-----+---------+---------
+
+Table: wx_subscription
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 编号      
+ appId      | VARCHAR(255) | NO   |     |         | appId   
+ replyType  | INT(10)      | NO   |     | 1       | 关注回复类型 1、文本 2、图文  3、图片 4、发红包
+ content    | TEXT(65535)  | NO   |     |         | 回复内容    
+ status     | BIT          | YES  |     | 0       | 激活      
+ createTime | DATETIME(19) | YES  |     |         | 创建时间    
+ updateTime | DATETIME(19) | YES  |     |         | 更新时间    
+ remark     | VARCHAR(255) | YES  |     |         | 备注      
+------------+--------------+------+-----+---------+---------
+
+Table: wx_user
+-----------------+--------------+------+-----+---------+---------
+ Field           | Type         | Null | Key | Default | Remarks 
+-----------------+--------------+------+-----+---------+---------
+ id              | INT(10)      | NO   | PRI |         | 编号      
+ appId           | VARCHAR(255) | YES  |     |         | appId   
+ openId          | VARCHAR(255) | YES  |     |         | 用户标示    
+ subscribeTime   | DATETIME(19) | YES  |     |         | 关注时间    
+ unsubscribeTime | DATETIME(19) | YES  |     |         | 取消关注    
+ nickName        | VARCHAR(255) | YES  |     |         | 昵称      
+ unionid         | VARCHAR(255) | YES  |     |         | unionid 
+ privilege       | VARCHAR(255) | YES  |     |         | 特权信息    
+ headimgurl      | VARCHAR(255) | YES  |     |         | 图像      
+ country         | VARCHAR(10)  | YES  |     |         | 国家      
+ city            | VARCHAR(10)  | YES  |     |         | 城市      
+ province        | VARCHAR(10)  | YES  |     |         | 省份      
+ sex             | INT(10)      | YES  |     |         | 用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+ updateTime      | DATETIME(19) | NO   |     |         | 更新时间    
+ remark          | TEXT(65535)  | YES  |     |         | 备注      
+-----------------+--------------+------+-----+---------+---------
+

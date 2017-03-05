@@ -4,10 +4,6 @@ import com.jfinal.kit.JsonKit;
 
 /**
  * 功能描述: 封装ajax返回
- * @author L.cm
- * email: 596392912@qq.com
- * site:http://www.dreamlu.net
- * date: 2015年7月31日 下午9:50:58
  */
 public class AjaxResult {
 
@@ -20,22 +16,30 @@ public class AjaxResult {
 	// 成功时携带的数据
 	private Object data;
 	
+	public void setCode(int code) {
+		this.code = code;
+	}
+	
 	public int getCode() {
 		return code;
 	}
 
+	public void setMessage(String message) {
+		 this.message =  message;
+	}
+	
 	public String getMessage() {
 		return message;
-	}
-
-	public Object getData() {
-		return data;
 	}
 
 	public void setData(Object data) {
 		this.data = data;
 	}
-
+	
+	public Object getData() {
+		return data;
+	}
+	
 	// 校验错误
 	public boolean hasError() {
 		return this.code != 0;
@@ -45,6 +49,12 @@ public class AjaxResult {
 	public AjaxResult addError(String message) {
 		this.message = message;
 		this.code = 1;
+		return this;
+	}
+	//添加错误，自定义错误信息
+	public AjaxResult addCustomError(int code,String message) {
+		this.message = message;
+		this.code = code;
 		return this;
 	}
 

@@ -1,13 +1,14 @@
 # maven #
-target
-
-logs
-
-# eclipse #
-.settings
-.project
+/target
+/target/
+bin
+*.log
+/.idea
+/.settings
+*.iml
 .classpath
-.log
+.project
+
 
 # windows #
 Thumbs.db
@@ -19,14 +20,10 @@ Thumbs.db
 *.war
 *.ear
 
-# idea #
-*.iml
-.idea/
-overlays
-bin
+production
 
 
-javen_config_pro.txt
+
 
 
 
