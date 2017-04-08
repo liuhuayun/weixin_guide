@@ -8,4 +8,11 @@ import com.javen.model.base.BaseKeyword;
 @SuppressWarnings("serial")
 public class Keyword extends BaseKeyword<Keyword> {
 	public static final Keyword dao = new Keyword().dao();
+	
+	public static final String TABLE_NAME = "wx_keyword";
+
+
+	public Keyword findKeyWord(int configId, String msgContent) {
+		return findFirst("select * from "+ TABLE_NAME +" where configId=? and content=?",configId,msgContent);
+	}
 }

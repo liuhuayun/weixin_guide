@@ -8,4 +8,11 @@ import com.javen.model.base.BaseSubscription;
 @SuppressWarnings("serial")
 public class Subscription extends BaseSubscription<Subscription> {
 	public static final Subscription dao = new Subscription().dao();
+	public static final String TABLE_NAME = "wx_subscription";
+
+	public Subscription findConfigId(int configId) {
+		return dao.findFirst("select * from "+ TABLE_NAME +" where configId=? and status = ?",configId,1);
+	}
+	
+	
 }

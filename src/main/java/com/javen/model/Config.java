@@ -8,4 +8,9 @@ import com.javen.model.base.BaseConfig;
 @SuppressWarnings("serial")
 public class Config extends BaseConfig<Config> {
 	public static final Config dao = new Config().dao();
+	public static final String TABLE_NAME = "wx_config";
+	
+	public Config findByUUID(String uuid){
+		return dao.findFirst("select * from "+TABLE_NAME+" where uuid=? and status = ?",uuid,1);
+	}
 }

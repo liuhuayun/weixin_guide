@@ -8,4 +8,11 @@ import com.javen.model.base.BaseUser;
 @SuppressWarnings("serial")
 public class User extends BaseUser<User> {
 	public static final User dao = new User().dao();
+
+	public static final String TABLE_NAME = "wx_user";
+
+	
+	public User findByOpenId(String openId) {
+		return findFirst("select * from "+ TABLE_NAME +" where openId=?",openId);
+	}
 }

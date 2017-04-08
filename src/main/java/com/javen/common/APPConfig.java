@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
+import com.javen.controller.WeixinMsgController;
 import com.javen.ext.plugin.log.Slf4jLogFactory;
 import com.javen.model._MappingKit;
 import com.jfinal.config.Constants;
@@ -73,7 +74,7 @@ public class APPConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		
+		me.add("/msg", WeixinMsgController.class);
 	}
 
 	/**
