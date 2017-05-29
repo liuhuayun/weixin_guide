@@ -1,2 +1,29 @@
+# maven #
 /target/
-/weixin_guide.log
+
+logs
+
+# eclipse #
+.externalToolBuilders
+.settings
+.project
+.classpath
+.log
+
+# windows #
+Thumbs.db
+
+# Mac #
+.DS_Store
+
+# Package Files #
+*.war
+*.ear
+
+# idea #
+*.iml
+.idea/
+overlays
+bin
+
+dev
