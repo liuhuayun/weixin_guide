@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : YUN-DB
-Source Server Version : 50716
+Source Server         : localhost-3306
+Source Server Version : 50718
 Source Host           : localhost:3306
 Source Database       : demo
 
 Target Server Type    : MYSQL
-Target Server Version : 50716
+Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2017-03-21 01:36:48
+Date: 2017-06-01 18:10:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;

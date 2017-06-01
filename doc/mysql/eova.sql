@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : YUN-DB
-Source Server Version : 50716
+Source Server         : localhost-3306
+Source Server Version : 50718
 Source Host           : localhost:3306
 Source Database       : eova
 
 Target Server Type    : MYSQL
-Target Server Version : 50716
+Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2017-03-21 01:38:57
+Date: 2017-06-01 18:09:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `eova_button` (
   `is_base` tinyint(1) DEFAULT '0' COMMENT '是否基础功能',
   `is_hide` tinyint(1) DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1130 DEFAULT CHARSET=utf8 COMMENT='EOVA操作按钮';
+) ENGINE=InnoDB AUTO_INCREMENT=1144 DEFAULT CHARSET=utf8 COMMENT='EOVA操作按钮';
 
 -- ----------------------------
 -- Records of eova_button
@@ -226,6 +226,20 @@ INSERT INTO `eova_button` VALUES ('1126', 'biz_product', '查看', null, '/eova/
 INSERT INTO `eova_button` VALUES ('1127', 'biz_product', '导入', null, '/eova/template/single/btn/import.html', '/single_grid/importXls/biz_product;/single_grid/doImportXls/biz_product', '5', '0', '1', '0');
 INSERT INTO `eova_button` VALUES ('1128', 'biz_product', '隐藏', null, '/eova/template/single/btn/hide.html', '/grid/hide/product', '6', '0', '1', '1');
 INSERT INTO `eova_button` VALUES ('1129', 'biz_demo_xls', '查询', null, 'query', '/diy/list/biz_demo_xls;/grid/query/null*;/grid/export/null*', '0', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1130', 'wxconfig', '查询', null, 'query', '/single_grid/list/wxconfig;/grid/query/wxconfig*;/grid/export/wxconfig*', '0', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1131', 'wxconfig', '新增', null, '/eova/template/single/btn/add.html', '/form/add/wxconfig*;/form/doAdd/wxconfig', '1', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1132', 'wxconfig', '修改', null, '/eova/template/single/btn/update.html', '/form/update/wxconfig*;/form/doUpdate/wxconfig', '2', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1133', 'wxconfig', '删除', null, '/eova/template/single/btn/delete.html', '/grid/delete/wxconfig', '3', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1134', 'wxconfig', '查看', null, '/eova/template/single/btn/detail.html', '/form/detail/wxconfig*', '4', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1135', 'wxconfig', '导入', null, '/eova/template/single/btn/import.html', '/single_grid/importXls/wxconfig;/single_grid/doImportXls/wxconfig', '5', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1136', 'wxconfig', '隐藏', null, '/eova/template/single/btn/hide.html', '/grid/hide/wxconfig', '6', '0', '1', '1');
+INSERT INTO `eova_button` VALUES ('1137', 'adminmgr', '查询', null, 'query', '/single_grid/list/adminmgr;/grid/query/wxadmin*;/grid/export/wxadmin*', '0', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1138', 'adminmgr', '新增', null, '/eova/template/single/btn/add.html', '/form/add/wxadmin*;/form/doAdd/wxadmin', '1', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1139', 'adminmgr', '修改', null, '/eova/template/single/btn/update.html', '/form/update/wxadmin*;/form/doUpdate/wxadmin', '2', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1140', 'adminmgr', '删除', null, '/eova/template/single/btn/delete.html', '/grid/delete/wxadmin', '3', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1141', 'adminmgr', '查看', null, '/eova/template/single/btn/detail.html', '/form/detail/wxadmin*', '4', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1142', 'adminmgr', '导入', null, '/eova/template/single/btn/import.html', '/single_grid/importXls/adminmgr;/single_grid/doImportXls/adminmgr', '5', '0', '1', '0');
+INSERT INTO `eova_button` VALUES ('1143', 'adminmgr', '隐藏', null, '/eova/template/single/btn/hide.html', '/grid/hide/wxadmin', '6', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for `eova_dict`
@@ -245,6 +259,9 @@ CREATE TABLE `eova_dict` (
 -- ----------------------------
 INSERT INTO `eova_dict` VALUES ('1', 'main', '默认', 'eova_object', 'data_source');
 INSERT INTO `eova_dict` VALUES ('2', 'eova', 'EOVA', 'eova_object', 'data_source');
+INSERT INTO `eova_dict` VALUES ('3', 'weixin', 'weixin', 'eova_object', 'data_source');
+INSERT INTO `eova_dict` VALUES ('4', '1', '可用', 'wx_admin', 'status');
+INSERT INTO `eova_dict` VALUES ('5', '0', '禁用', 'wx_admin', 'status');
 INSERT INTO `eova_dict` VALUES ('40', '1', '新增', 'eova_log', 'type');
 INSERT INTO `eova_dict` VALUES ('41', '2', '修改', 'eova_log', 'type');
 INSERT INTO `eova_dict` VALUES ('42', '3', '删除', 'eova_log', 'type');
@@ -294,7 +311,7 @@ CREATE TABLE `eova_field` (
   `data_size` int(2) DEFAULT '1' COMMENT '整数位长度',
   `data_decimal` int(2) DEFAULT '0' COMMENT '小数位长度',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3132 DEFAULT CHARSET=utf8 COMMENT='EOVA元字段';
+) ENGINE=InnoDB AUTO_INCREMENT=3162 DEFAULT CHARSET=utf8 COMMENT='EOVA元字段';
 
 -- ----------------------------
 -- Records of eova_field
@@ -577,6 +594,21 @@ INSERT INTO `eova_field` VALUES ('2992', 'test_info', '2', '61', '详细信息',
 INSERT INTO `eova_field` VALUES ('3129', 'v_orders', '0', '5', '订单信息', 'orders', 'update_user_id', '更新用户ID', '0', '文本框', null, '0', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '10', '4', 'INT', '10', '0');
 INSERT INTO `eova_field` VALUES ('3130', 'v_orders', '0', '8', '订单信息', 'orders', 'update_time', '更新时间', '0', '时间框', null, '0', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '10', '93', 'DATETIME', '19', '0');
 INSERT INTO `eova_field` VALUES ('3131', 'data_money', '0', '6', '', null, 'total', '销售总额(虚拟字段)', '0', '文本框', '', '0', '1', '0', '0', '0', '0', '0', '0', '0', null, null, '', 'function(value,row,index,field){return row.num+row.num1+row.num2;}', '130', '20', null, '0', '0', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3146', 'wxadmin', '0', '1', '', null, 'id', '编号', '1', '自增框', null, '0', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '20', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3147', 'wxadmin', '0', '2', '', null, 'nickname', '昵称', '0', '文本域', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '0', '0', '12', 'VARCHAR', '255', '0');
+INSERT INTO `eova_field` VALUES ('3148', 'wxadmin', '0', '3', '', null, 'mobilephone', '手机号', '0', '文本框', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, 'mobile;', '', null, '130', '20', null, '0', '0', '12', 'VARCHAR', '11', '0');
+INSERT INTO `eova_field` VALUES ('3149', 'wxadmin', '0', '4', '', null, 'email', '邮箱', '0', '文本域', null, '0', '1', '0', '1', '1', '1', '1', '1', '0', null, 'email;', '', null, '130', '20', null, '0', '0', '12', 'VARCHAR', '255', '0');
+INSERT INTO `eova_field` VALUES ('3150', 'wxadmin', '0', '5', '', null, 'login_pwd', '登陆密码', '0', '文本域', null, '0', '0', '0', '0', '1', '1', '1', '1', '0', '', null, '', null, '130', '20', null, '0', '50', '12', 'VARCHAR', '255', '0');
+INSERT INTO `eova_field` VALUES ('3151', 'wxadmin', '0', '6', '', null, 'rid', '角色编号', '0', '下拉框', 'select id ID,name CN from eova_role where lv >= ${user.role.lv};ds=eova', '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '0', '0', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3152', 'wxadmin', '0', '7', '', null, 'status', '状态', '0', '下拉框', 'select value ID,name CN from eova_dict where object = \'wx_admin\' and field = \'status\';ds=eova', '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '1', null, '130', '20', null, '0', '0', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3153', 'wxadmin', '0', '8', '', null, 'address', '地址', '0', '文本域', null, '0', '1', '0', '1', '1', '1', '1', '0', '0', null, null, '', null, '130', '20', null, '0', '0', '12', 'VARCHAR', '255', '0');
+INSERT INTO `eova_field` VALUES ('3154', 'wxadmin', '0', '9', '', null, 'create_time', '创建时间', '0', '时间框', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '50', '93', 'DATETIME', '19', '0');
+INSERT INTO `eova_field` VALUES ('3155', 'wxadmin', '0', '10', '', null, 'update_time', '更新时间', '0', '时间框', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '50', '93', 'DATETIME', '19', '0');
+INSERT INTO `eova_field` VALUES ('3157', 'wxconfig', '0', '1', '', null, 'id', '编号', '1', '自增框', null, '0', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '20', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3158', 'wxconfig', '0', '2', '', null, 'uid', '所属用户', '0', '下拉框', 'select id ID ,nickname CN from wx_admin ;ds=weixin', '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '0', '0', '4', 'INT', '10', '0');
+INSERT INTO `eova_field` VALUES ('3159', 'wxconfig', '0', '3', '', null, 'app_id', '应用编号', '0', '下拉框', 'select app_id ID ,app_id CN from wx_config ;ds=weixin', '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '0', '0', '12', 'VARCHAR', '255', '0');
+INSERT INTO `eova_field` VALUES ('3160', 'wxconfig', '0', '4', '', null, 'create_time', '创建时间', '0', '时间框', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '50', '93', 'DATETIME', '19', '0');
+INSERT INTO `eova_field` VALUES ('3161', 'wxconfig', '0', '5', '', null, 'updae_time', '更新时间', '0', '时间框', null, '1', '1', '0', '1', '1', '1', '1', '1', '0', null, null, '', null, '130', '20', null, '50', '50', '93', 'DATETIME', '19', '0');
 
 -- ----------------------------
 -- Table structure for `eova_log`
@@ -590,11 +622,116 @@ CREATE TABLE `eova_log` (
   `info` varchar(500) DEFAULT NULL COMMENT '操作详情',
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='EOVA操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COMMENT='EOVA操作日志';
 
 -- ----------------------------
 -- Records of eova_log
 -- ----------------------------
+INSERT INTO `eova_log` VALUES ('1', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[3]', '2017-05-31 17:41:24');
+INSERT INTO `eova_log` VALUES ('2', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[1000]', '2017-05-31 17:41:48');
+INSERT INTO `eova_log` VALUES ('3', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[900]', '2017-05-31 17:57:30');
+INSERT INTO `eova_log` VALUES ('4', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[1056]', '2017-05-31 17:57:46');
+INSERT INTO `eova_log` VALUES ('5', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[900]', '2017-05-31 17:58:27');
+INSERT INTO `eova_log` VALUES ('6', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[1056]', '2017-05-31 17:59:47');
+INSERT INTO `eova_log` VALUES ('7', '1', '2', '0:0:0:0:0:0:0:1', 'eova_object_code[1125]', '2017-05-31 18:13:08');
+INSERT INTO `eova_log` VALUES ('8', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:13:53');
+INSERT INTO `eova_log` VALUES ('9', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3134]', '2017-05-31 18:13:53');
+INSERT INTO `eova_log` VALUES ('10', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3135]', '2017-05-31 18:13:53');
+INSERT INTO `eova_log` VALUES ('11', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:15:12');
+INSERT INTO `eova_log` VALUES ('12', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:16:59');
+INSERT INTO `eova_log` VALUES ('13', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:19:55');
+INSERT INTO `eova_log` VALUES ('14', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:20:09');
+INSERT INTO `eova_log` VALUES ('15', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:20:17');
+INSERT INTO `eova_log` VALUES ('16', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:20:44');
+INSERT INTO `eova_log` VALUES ('17', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:22:52');
+INSERT INTO `eova_log` VALUES ('18', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:28:14');
+INSERT INTO `eova_log` VALUES ('19', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:29:37');
+INSERT INTO `eova_log` VALUES ('20', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:29:58');
+INSERT INTO `eova_log` VALUES ('21', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:36:54');
+INSERT INTO `eova_log` VALUES ('22', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:37:30');
+INSERT INTO `eova_log` VALUES ('23', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:39:57');
+INSERT INTO `eova_log` VALUES ('24', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:44:03');
+INSERT INTO `eova_log` VALUES ('25', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:44:35');
+INSERT INTO `eova_log` VALUES ('26', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:45:28');
+INSERT INTO `eova_log` VALUES ('27', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3133]', '2017-05-31 18:46:06');
+INSERT INTO `eova_log` VALUES ('28', '1', '2', '0:0:0:0:0:0:0:1', 'eova_object_code[1126]', '2017-06-01 14:32:54');
+INSERT INTO `eova_log` VALUES ('29', '1', '2', '0:0:0:0:0:0:0:1', 'eova_object_code[1126]', '2017-06-01 14:33:10');
+INSERT INTO `eova_log` VALUES ('30', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3141]', '2017-06-01 14:39:22');
+INSERT INTO `eova_log` VALUES ('31', '1', '1', '0:0:0:0:0:0:0:1', 'eova_role_code', '2017-06-01 14:43:08');
+INSERT INTO `eova_log` VALUES ('32', '1', '2', '0:0:0:0:0:0:0:1', 'eova_role_code[5]', '2017-06-01 14:43:21');
+INSERT INTO `eova_log` VALUES ('33', '1', '2', '0:0:0:0:0:0:0:1', 'eova_menu_code[1058]', '2017-06-01 14:44:04');
+INSERT INTO `eova_log` VALUES ('34', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3142]', '2017-06-01 14:45:24');
+INSERT INTO `eova_log` VALUES ('35', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3142]', '2017-06-01 14:45:42');
+INSERT INTO `eova_log` VALUES ('36', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3151]', '2017-06-01 14:48:52');
+INSERT INTO `eova_log` VALUES ('37', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3151]', '2017-06-01 14:48:58');
+INSERT INTO `eova_log` VALUES ('38', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3152]', '2017-06-01 14:52:41');
+INSERT INTO `eova_log` VALUES ('39', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3152]', '2017-06-01 14:54:10');
+INSERT INTO `eova_log` VALUES ('40', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3152]', '2017-06-01 14:55:00');
+INSERT INTO `eova_log` VALUES ('41', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3154]', '2017-06-01 15:19:00');
+INSERT INTO `eova_log` VALUES ('42', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3155]', '2017-06-01 15:19:00');
+INSERT INTO `eova_log` VALUES ('43', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3155]', '2017-06-01 15:19:47');
+INSERT INTO `eova_log` VALUES ('44', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3154]', '2017-06-01 15:19:47');
+INSERT INTO `eova_log` VALUES ('45', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3152]', '2017-06-01 15:20:04');
+INSERT INTO `eova_log` VALUES ('46', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3151]', '2017-06-01 15:20:04');
+INSERT INTO `eova_log` VALUES ('47', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3148]', '2017-06-01 15:20:04');
+INSERT INTO `eova_log` VALUES ('48', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3147]', '2017-06-01 15:20:04');
+INSERT INTO `eova_log` VALUES ('49', '1', '2', '0:0:0:0:0:0:0:1', 'eova_object_code[1127]', '2017-06-01 15:35:09');
+INSERT INTO `eova_log` VALUES ('50', '1', '1', '0:0:0:0:0:0:0:1', 'wxadmin', '2017-06-01 15:36:18');
+INSERT INTO `eova_log` VALUES ('51', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3150]', '2017-06-01 15:37:05');
+INSERT INTO `eova_log` VALUES ('52', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3150]', '2017-06-01 15:38:22');
+INSERT INTO `eova_log` VALUES ('53', '1', '1', '0:0:0:0:0:0:0:1', 'wxadmin', '2017-06-01 15:38:58');
+INSERT INTO `eova_log` VALUES ('54', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3150]', '2017-06-01 15:39:25');
+INSERT INTO `eova_log` VALUES ('55', '1', '2', '0:0:0:0:0:0:0:1', 'wxadmin[1]', '2017-06-01 15:48:11');
+INSERT INTO `eova_log` VALUES ('56', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3152]', '2017-06-01 15:51:18');
+INSERT INTO `eova_log` VALUES ('57', '1', '2', '0:0:0:0:0:0:0:1', 'wxadmin[1]', '2017-06-01 15:51:41');
+INSERT INTO `eova_log` VALUES ('58', '1', '2', '0:0:0:0:0:0:0:1', 'wxadmin[1]', '2017-06-01 15:51:49');
+INSERT INTO `eova_log` VALUES ('59', '1', '1', '0:0:0:0:0:0:0:1', 'wxadmin', '2017-06-01 15:57:15');
+INSERT INTO `eova_log` VALUES ('60', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3148]', '2017-06-01 16:02:52');
+INSERT INTO `eova_log` VALUES ('61', '1', '1', '0:0:0:0:0:0:0:1', 'wxadmin', '2017-06-01 16:04:46');
+INSERT INTO `eova_log` VALUES ('62', '1', '2', '0:0:0:0:0:0:0:1', 'wxadmin[1]', '2017-06-01 16:10:16');
+INSERT INTO `eova_log` VALUES ('63', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3160]', '2017-06-01 16:21:52');
+INSERT INTO `eova_log` VALUES ('64', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3161]', '2017-06-01 16:21:52');
+INSERT INTO `eova_log` VALUES ('65', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 16:21:52');
+INSERT INTO `eova_log` VALUES ('66', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 16:21:52');
+INSERT INTO `eova_log` VALUES ('67', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 16:22:26');
+INSERT INTO `eova_log` VALUES ('68', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 16:22:26');
+INSERT INTO `eova_log` VALUES ('69', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3160]', '2017-06-01 16:22:29');
+INSERT INTO `eova_log` VALUES ('70', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3161]', '2017-06-01 16:22:29');
+INSERT INTO `eova_log` VALUES ('71', '1', '2', '0:0:0:0:0:0:0:1', 'eova_object_code[1128]', '2017-06-01 16:27:58');
+INSERT INTO `eova_log` VALUES ('72', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:15:36');
+INSERT INTO `eova_log` VALUES ('73', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:16:53');
+INSERT INTO `eova_log` VALUES ('74', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:18:24');
+INSERT INTO `eova_log` VALUES ('75', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:23:14');
+INSERT INTO `eova_log` VALUES ('76', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:24:25');
+INSERT INTO `eova_log` VALUES ('77', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:25:25');
+INSERT INTO `eova_log` VALUES ('78', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:27:52');
+INSERT INTO `eova_log` VALUES ('79', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:28:28');
+INSERT INTO `eova_log` VALUES ('80', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:29:52');
+INSERT INTO `eova_log` VALUES ('81', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:30:03');
+INSERT INTO `eova_log` VALUES ('82', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:30:11');
+INSERT INTO `eova_log` VALUES ('83', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:31:27');
+INSERT INTO `eova_log` VALUES ('84', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:31:53');
+INSERT INTO `eova_log` VALUES ('85', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:32:49');
+INSERT INTO `eova_log` VALUES ('86', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:33:58');
+INSERT INTO `eova_log` VALUES ('87', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:35:01');
+INSERT INTO `eova_log` VALUES ('88', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:35:55');
+INSERT INTO `eova_log` VALUES ('89', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:36:08');
+INSERT INTO `eova_log` VALUES ('90', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:41:36');
+INSERT INTO `eova_log` VALUES ('91', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 17:47:52');
+INSERT INTO `eova_log` VALUES ('92', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:48:11');
+INSERT INTO `eova_log` VALUES ('93', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:53:42');
+INSERT INTO `eova_log` VALUES ('94', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:57:20');
+INSERT INTO `eova_log` VALUES ('95', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 17:58:01');
+INSERT INTO `eova_log` VALUES ('96', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 18:00:23');
+INSERT INTO `eova_log` VALUES ('97', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:01:19');
+INSERT INTO `eova_log` VALUES ('98', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:01:31');
+INSERT INTO `eova_log` VALUES ('99', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:02:39');
+INSERT INTO `eova_log` VALUES ('100', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 18:02:54');
+INSERT INTO `eova_log` VALUES ('101', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 18:03:11');
+INSERT INTO `eova_log` VALUES ('102', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:03:49');
+INSERT INTO `eova_log` VALUES ('103', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3158]', '2017-06-01 18:04:22');
+INSERT INTO `eova_log` VALUES ('104', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:04:45');
+INSERT INTO `eova_log` VALUES ('105', '1', '2', '0:0:0:0:0:0:0:1', 'eova_field_code[3159]', '2017-06-01 18:05:08');
 
 -- ----------------------------
 -- Table structure for `eova_menu`
@@ -617,22 +754,22 @@ CREATE TABLE `eova_menu` (
   `filter` varchar(500) DEFAULT NULL COMMENT '初始数据过滤条件',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_code` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=1056 DEFAULT CHARSET=utf8 COMMENT='EOVA菜单';
+) ENGINE=InnoDB AUTO_INCREMENT=1059 DEFAULT CHARSET=utf8 COMMENT='EOVA菜单';
 
 -- ----------------------------
 -- Records of eova_menu
 -- ----------------------------
 INSERT INTO `eova_menu` VALUES ('1', 'eova', '平台维护', 'dir', 'eova-icon169', '3', '0', '0', null, null, null, null, '0', null);
-INSERT INTO `eova_menu` VALUES ('3', 'biz', '综合业务', 'dir', 'eova-icon877', '1', '0', '1', '', null, '', '', '0', '');
+INSERT INTO `eova_menu` VALUES ('3', 'biz', '综合业务', 'dir', 'eova-icon877', '1', '0', '0', '', null, '', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('20', 'eova_menu', '菜单管理', 'single_tree', 'eova-icon43', '1', '1', '1', null, null, '{\"objectCode\":\"eova_menu_code\",\"tree\":{\"iconField\":\"iconskip\",\"parentField\":\"parent_id\",\"treeField\":\"name\",\"idField\":\"id\",\"rootPid\":\"0\"}}', null, '0', null);
 INSERT INTO `eova_menu` VALUES ('21', 'eova_button', '按钮管理', 'tree_grid', 'eova-icon169', '2', '1', '1', '', null, '{\"objectCode\":\"eova_button_code\",\"objectField\":\"menu_code\",\"tree\":{\"iconField\":\"iconskip\",\"idField\":\"id\",\"objectCode\":\"eova_menu_code\",\"objectField\":\"code\",\"parentField\":\"parent_id\",\"treeField\":\"name\",\"rootPid\":\"0\"}}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('22', 'eova_object', '元数据管理', 'master_slave_grid', 'eova-icon395', '3', '1', '1', null, null, '{\"fields\":[\"object_code\"],\"objectCode\":\"eova_object_code\",\"objectField\":\"code\",\"objects\":[\"eova_field_code\"]}', null, '0', null);
 INSERT INTO `eova_menu` VALUES ('25', 'eova_task', '定时调度', 'single_grid', 'eova-icon280', '4', '1', '1', null, '', '{\"objectCode\":\"eova_task_code\"}', null, '0', null);
-INSERT INTO `eova_menu` VALUES ('900', 'sys', '系统管理', 'dir', 'eova-icon294', '1', '0', '0', null, null, null, null, '0', null);
+INSERT INTO `eova_menu` VALUES ('900', 'sys', '系统管理', 'dir', 'eova-icon294', '2', '0', '0', '', null, '', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('901', 'sys_auth_users', '用户管理', 'master_slave_grid', 'eova-icon518', '1', '900', '1', '', '', '{\"fields\":[\"id\"],\"objectCode\":\"eova_user_code\",\"objectField\":\"id\",\"objects\":[\"user_info_code\"]}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('902', 'sys_auth_role', '角色管理', 'single_grid', 'eova-icon525', '2', '900', '1', '', null, '{\"objectCode\":\"eova_role_code\"}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('903', 'sys_log', '系统日志', 'single_grid', 'eova-icon1058', '3', '900', '1', '', null, '{\"objectCode\":\"eova_log_code\"}', '', '0', '');
-INSERT INTO `eova_menu` VALUES ('1000', 'biz_demo', '功能演示', 'dir', 'eova-icon145', '2', '3', '1', '', null, '', '', '0', '');
+INSERT INTO `eova_menu` VALUES ('1000', 'biz_demo', '功能演示', 'dir', 'eova-icon145', '2', '3', '0', '', null, '', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('1001', 'biz_demo_users', '单表CRUD', 'single_grid', 'eova-icon49', '2', '1000', '1', '', '', '{\"objectCode\":\"player_code\"}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('1005', 'biz_demo_userscell', '表格单元格编辑', 'single_grid', 'eova-icon294', '5', '1000', '1', '', null, '{\"objectCode\":\"celledit_users_code\"}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('1006', 'biz_demo_import', '导入导出', 'single_grid', 'eova-icon84', '6', '1000', '1', '', null, '{\"objectCode\":\"player_code\"}', '', '0', '');
@@ -656,6 +793,9 @@ INSERT INTO `eova_menu` VALUES ('1052', 'eova_code', '神器·代码仓库', 'di
 INSERT INTO `eova_menu` VALUES ('1053', 'biz_demo_hotel', '酒店管理(关联)', 'single_grid', 'eova-icon182', '9', '1000', '1', '', '', '{\"objectCode\":\"hotel\"}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('1054', 'biz_demo_hotel_stock', '酒店库存管理', 'single_grid', 'eova-icon182', '9', '1000', '1', '', '', '{\"objectCode\":\"hotel_stock\"}', '', '0', '');
 INSERT INTO `eova_menu` VALUES ('1055', 'biz_demo_xls', '自定义模版导出', 'diy', 'eova-icon779', '5', '1011', '1', '', '/xls', '{}', '', '0', '');
+INSERT INTO `eova_menu` VALUES ('1056', 'wxback', '微信后台', 'dir', 'eova-icon929', '2', '0', '1', '', '', '{}', '', '0', '');
+INSERT INTO `eova_menu` VALUES ('1057', 'wxconfig', '微信配置', 'single_grid', 'eova-icon62', '1', '1056', '1', null, '', '{\"objectCode\":\"wxconfig\"}', null, '0', null);
+INSERT INTO `eova_menu` VALUES ('1058', 'adminmgr', '登录用户', 'single_grid', 'eova-icon100', '1', '1056', '1', '', '', '{\"objectCode\":\"wxadmin\"}', '', '0', '');
 
 -- ----------------------------
 -- Table structure for `eova_object`
@@ -682,7 +822,7 @@ CREATE TABLE `eova_object` (
   `config` varchar(2000) DEFAULT NULL COMMENT '拓展配置',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_code` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=1125 DEFAULT CHARSET=utf8 COMMENT='EOVA元对象';
+) ENGINE=InnoDB AUTO_INCREMENT=1129 DEFAULT CHARSET=utf8 COMMENT='EOVA元对象';
 
 -- ----------------------------
 -- Records of eova_object
@@ -719,6 +859,8 @@ INSERT INTO `eova_object` VALUES ('1119', 'v_users', '用户视图', 'v_userinfo
 INSERT INTO `eova_object` VALUES ('1122', 'area', '省市区', '', 'area', 'id', 'main', '1', '0', '1', '1', 'lv < 3', '', null, '', '', null, '');
 INSERT INTO `eova_object` VALUES ('1123', 'area_city', '全国各省', '', 'area_city', 'id', 'main', '1', '0', '1', '1', '', '', null, '', '', null, null);
 INSERT INTO `eova_object` VALUES ('1124', 'sale_data', '销售数据', null, 'sale_data', 'id', 'main', '1', '0', '1', '1', null, null, null, null, '', null, null);
+INSERT INTO `eova_object` VALUES ('1127', 'wxadmin', '登录用户', '', 'wx_admin', 'id', 'weixin', '1', '0', '1', '1', '', '', null, '', 'com.javen.user.AdminUserIntercept', null, '');
+INSERT INTO `eova_object` VALUES ('1128', 'wxconfig', '微信配置', '', 'wx_config', 'id', 'weixin', '1', '0', '1', '1', '', '', null, '', 'com.javen.user.WxConfigIntercept', null, '');
 
 -- ----------------------------
 -- Table structure for `eova_role`
@@ -730,7 +872,7 @@ CREATE TABLE `eova_role` (
   `info` varchar(255) DEFAULT NULL COMMENT '角色描述',
   `lv` int(11) DEFAULT '0' COMMENT '权限级别',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='EOVA角色';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='EOVA角色';
 
 -- ----------------------------
 -- Records of eova_role
@@ -739,6 +881,7 @@ INSERT INTO `eova_role` VALUES ('1', '超级管理员', '开发者权限(禁止�
 INSERT INTO `eova_role` VALUES ('2', '管理员', '管理所有可用功能', '10');
 INSERT INTO `eova_role` VALUES ('3', '测试组长', '测试小组的组长', '20');
 INSERT INTO `eova_role` VALUES ('4', '测试通用', '测试通用权限', '30');
+INSERT INTO `eova_role` VALUES ('5', '普通用户', '普通用户权限', '40');
 
 -- ----------------------------
 -- Table structure for `eova_role_btn`
@@ -749,7 +892,7 @@ CREATE TABLE `eova_role_btn` (
   `rid` int(11) NOT NULL COMMENT '角色',
   `bid` int(11) NOT NULL COMMENT '功能',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8 COMMENT='EOVA角色按钮';
+) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=utf8 COMMENT='EOVA角色按钮';
 
 -- ----------------------------
 -- Records of eova_role_btn
@@ -1028,6 +1171,28 @@ INSERT INTO `eova_role_btn` VALUES ('271', '2', '1022');
 INSERT INTO `eova_role_btn` VALUES ('282', '3', '1070');
 INSERT INTO `eova_role_btn` VALUES ('283', '3', '1049');
 INSERT INTO `eova_role_btn` VALUES ('284', '1', '1129');
+INSERT INTO `eova_role_btn` VALUES ('285', '1', '1130');
+INSERT INTO `eova_role_btn` VALUES ('286', '1', '1131');
+INSERT INTO `eova_role_btn` VALUES ('287', '1', '1132');
+INSERT INTO `eova_role_btn` VALUES ('288', '1', '1133');
+INSERT INTO `eova_role_btn` VALUES ('289', '1', '1134');
+INSERT INTO `eova_role_btn` VALUES ('290', '1', '1135');
+INSERT INTO `eova_role_btn` VALUES ('291', '1', '1136');
+INSERT INTO `eova_role_btn` VALUES ('292', '1', '1137');
+INSERT INTO `eova_role_btn` VALUES ('293', '1', '1138');
+INSERT INTO `eova_role_btn` VALUES ('294', '1', '1139');
+INSERT INTO `eova_role_btn` VALUES ('295', '1', '1140');
+INSERT INTO `eova_role_btn` VALUES ('296', '1', '1141');
+INSERT INTO `eova_role_btn` VALUES ('297', '1', '1142');
+INSERT INTO `eova_role_btn` VALUES ('298', '1', '1143');
+INSERT INTO `eova_role_btn` VALUES ('312', '5', '1137');
+INSERT INTO `eova_role_btn` VALUES ('313', '5', '1139');
+INSERT INTO `eova_role_btn` VALUES ('314', '5', '1134');
+INSERT INTO `eova_role_btn` VALUES ('315', '5', '1132');
+INSERT INTO `eova_role_btn` VALUES ('316', '5', '1133');
+INSERT INTO `eova_role_btn` VALUES ('317', '5', '1131');
+INSERT INTO `eova_role_btn` VALUES ('318', '5', '1130');
+INSERT INTO `eova_role_btn` VALUES ('319', '5', '1141');
 
 -- ----------------------------
 -- Table structure for `eova_task`

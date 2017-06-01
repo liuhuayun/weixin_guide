@@ -9,6 +9,7 @@ package com.oss;
 import java.util.HashSet;
 
 import com.alibaba.druid.filter.stat.StatFilter;
+import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.druid.wall.WallFilter;
 import com.eova.config.EovaConfig;
 import com.eova.interceptor.LoginInterceptor;
@@ -70,13 +71,14 @@ public class OSSConfig extends EovaConfig {
         /** 新增自定义数据源start **/
         // ActiveRecordPlugin arp = addDataSource(plugins, "oss", JdbcUtils.MYSQL);
         // arp.addMapping("xxx", Xxx.class);
+    	ActiveRecordPlugin arp = addDataSource(plugins, "weixin", JdbcUtils.MYSQL);
         /** 新增自定义数据源end **/
 
         // 添加自动扫描插件
 
         // ...
     }
-
+  
     /**
      * 新增自定义数据源
      *
