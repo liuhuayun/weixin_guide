@@ -157,7 +157,7 @@ $(document).ready(function() {
 	// 初始化添加默认主页
 	var mainOpts = {
 		fit: true,
-		title: 'EOVA V1.6',
+		title: 'Welcome',
 		closable: false,
 		border: false,
 		iconCls: 'eova-icon475',

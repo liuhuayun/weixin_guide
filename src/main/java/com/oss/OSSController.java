@@ -29,7 +29,9 @@ import com.oss.model.UserInfo;
  * http://www.eova.cn/qa/detail/358
  */
 public class OSSController extends IndexController {
-	
+	public void welcome(){
+		render("/eova/welcome.html");
+	}
 	
 	@Override
 	public void doLogin() {
