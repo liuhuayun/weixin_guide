@@ -1,21 +1,12 @@
-package com.javen.user;
-
-import java.util.Date;
+package com.javen.wx.intercept;
 
 import com.eova.aop.AopContext;
-import com.eova.aop.MetaObjectIntercept;
 import com.eova.common.Easy;
 import com.eova.common.utils.EncryptUtil;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 
-public class AdminUserIntercept extends MetaObjectIntercept{
-	
-	@Override
-	public String deleteBefore(AopContext ac) throws Exception {
-		// TODO Auto-generated method stub
-		return super.deleteBefore(ac);
-	}
+public class AdminUserIntercept extends BaseMetaObjectIntercept{
 	
 	@Override
 	public void queryBefore(AopContext ac) throws Exception {
@@ -45,19 +36,12 @@ public class AdminUserIntercept extends MetaObjectIntercept{
 //		System.out.println("添加的信息>"+mobilephone+" "+email+" "+nickname);
 		String nickname = ac.record.getStr("nickname");
 		
-		Record user = Db.use("weixin").findFirst("select * from wx_admin where nickname=?",nickname);
+		Record user = Db.findFirst("select * from wx_admin where nickname=?",nickname);
 		if (user !=null) {
 			return Easy.error("昵称存在,禁止重复添加！");
 		}
 		
 		ac.record.set("login_pwd", EncryptUtil.getSM32(ac.record.getStr("login_pwd")));
-		ac.record.set("create_time", new Date());
-		ac.record.set("update_time", new Date());
 		return super.addBefore(ac);
-	}
-	@Override
-	public String updateBefore(AopContext ac) throws Exception {
-		ac.record.set("update_time", new Date());
-		return super.updateBefore(ac);
 	}
 }

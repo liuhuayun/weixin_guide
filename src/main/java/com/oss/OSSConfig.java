@@ -8,18 +8,24 @@ package com.oss;
 
 import java.util.HashSet;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.alibaba.druid.filter.stat.StatFilter;
-import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.druid.wall.WallFilter;
 import com.eova.config.EovaConfig;
+import com.eova.handler.UrlBanHandler;
 import com.eova.interceptor.LoginInterceptor;
+import com.eova.model.User;
 import com.eova.user.UserController;
+import com.jfinal.config.Handlers;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
+import com.jfinal.plugin.druid.DruidStatViewHandler;
+import com.jfinal.plugin.druid.IDruidStatViewAuth;
 import com.mysql.jdbc.Connection;
 import com.oss.model.UserInfo;
 import com.oss.product.ProductController;
@@ -71,14 +77,13 @@ public class OSSConfig extends EovaConfig {
         /** 新增自定义数据源start **/
         // ActiveRecordPlugin arp = addDataSource(plugins, "oss", JdbcUtils.MYSQL);
         // arp.addMapping("xxx", Xxx.class);
-    	ActiveRecordPlugin arp = addDataSource(plugins, "weixin", JdbcUtils.MYSQL);
         /** 新增自定义数据源end **/
 
         // 添加自动扫描插件
 
         // ...
     }
-  
+
     /**
      * 新增自定义数据源
      *
@@ -142,6 +147,27 @@ public class OSSConfig extends EovaConfig {
         HashSet<String> uris = new HashSet<String>();
         uris.add("/xxx/**");
         // auths.put(角色ID, uris);
+    }
+    @Override
+    public void configHandler(Handlers me) {
+    	System.err.println("Config Hanlers starting ...");
+    	DruidStatViewHandler dvh = new DruidStatViewHandler("/druid", new IDruidStatViewAuth() {
+			
+			@Override
+			public boolean isPermitted(HttpServletRequest request) {
+				User user = (User) request.getSession().getAttribute("user");
+				if (user !=null) {
+					int rId = user.getRid();
+					if (rId == 1 || rId == 2 ) {
+						return true;
+					}
+				}
+				return false;
+			}
+		});
+    	me.add(dvh);
+    	// 过滤禁止访问资源
+    	me.add(new UrlBanHandler(".*\\.(html|tag)", false));
     }
 
 }

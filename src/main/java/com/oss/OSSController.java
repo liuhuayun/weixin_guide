@@ -46,7 +46,7 @@ public class OSSController extends IndexController {
 		}
 
 		// 根据登录名从自定义用户表中查询用户
-		Record user = Db.use("weixin").findFirst("select * from wx_admin where nickname = ?",loginId);
+		Record user = Db.findFirst("select * from wx_admin where nickname = ?",loginId);
 		
 		// 用户密码验证
 		if (user == null) {
@@ -54,7 +54,11 @@ public class OSSController extends IndexController {
 			toLogin();
 			return;
 		}
-		System.out.println(loginPwd +">>>"+EncryptUtil.getSM32(loginPwd));
+		if (user.getInt("status") == 0) {
+			setAttr("msg", "用户不可用");
+			toLogin();
+			return;
+		}
 		if (!user.getStr("login_pwd").equals(EncryptUtil.getSM32(loginPwd))) {
 			setAttr("msg", "密码错误");
 			keepPara("loginId");
@@ -109,7 +113,7 @@ public class OSSController extends IndexController {
 		int id = user.getInt("id");
 		
 		//查询自定义用户表中查询用户
-		Record record = Db.use("weixin").findById("wx_admin", id);
+		Record record = Db.findById("wx_admin", id);
 		
 		String pwd = record.getStr("login_pwd");
 //		System.out.println("修改密码的用户ID>"+id);
@@ -125,7 +129,7 @@ public class OSSController extends IndexController {
 		// 修改密码
 		record.set("login_pwd", EncryptUtil.getSM32(newPwd));
 		record.set("update_time", new Date());
-		Db.use("weixin").update("wx_admin", record);
+		Db.update("wx_admin", record);
 		renderJson(new Easy());
 	}
 
