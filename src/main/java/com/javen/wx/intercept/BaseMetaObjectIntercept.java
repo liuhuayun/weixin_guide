@@ -6,6 +6,7 @@ import com.eova.aop.AopContext;
 import com.eova.aop.MetaObjectIntercept;
 
 public class BaseMetaObjectIntercept extends MetaObjectIntercept {
+	
 	@Override
 	public String updateBefore(AopContext ac) throws Exception {
 		ac.record.set("update_time", new Date());

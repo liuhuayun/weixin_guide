@@ -12,9 +12,6 @@ public class AdminUserIntercept extends BaseMetaObjectIntercept{
 	public void queryBefore(AopContext ac) throws Exception {
 		int id = ac.user.getInt("id");
 		int rId = ac.user.role.getInt("id");
-				
-		System.out.println("用户ID>"+id);
-		System.out.println("角色ID>"+rId);
 		
 		if (rId <=2) {
 			//查询所有app信息
