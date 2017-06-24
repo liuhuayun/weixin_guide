@@ -72,6 +72,6 @@ weixin_guide 是基于jfinal_weixin SDK开发的实战项目。
 
 - [JFinal](http://git.oschina.net/jfinal/jfinal)
 - [Jfinal-weixin](http://git.oschina.net/jfinal/jfinal-weixin)
-
+- [eova](http://git.oschina.net/eova/eova)
 
 

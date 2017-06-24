@@ -9,7 +9,7 @@
  Target Server Version : 50627
  File Encoding         : utf-8
 
- Date: 06/04/2017 16:35:18 PM
+ Date: 06/24/2017 18:40:11 PM
 */
 
 SET NAMES utf8;
@@ -124,13 +124,13 @@ CREATE TABLE `dicts` (
   `field` varchar(50) NOT NULL COMMENT '字段名',
   `ext` varchar(255) DEFAULT '' COMMENT '扩展Json',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `dicts`
 -- ----------------------------
 BEGIN;
-INSERT INTO `dicts` VALUES ('1', '1', '被套', 'product', 'category', ''), ('2', '2', '床单', 'product', 'category', ''), ('3', '3', '浴巾', 'product', 'category', ''), ('4', '4', '毛巾', 'product', 'category', ''), ('5', '5', '枕套', 'product', 'category', ''), ('6', '1', '纯棉', 'product', 'stuff', ''), ('7', '2', '涤纶', 'product', 'stuff', ''), ('8', '3', '纺纱', 'product', 'stuff', ''), ('9', '4', '轻纱', 'product', 'stuff', ''), ('10', '1', '90', 'product', 'size', ''), ('11', '2', '120', 'product', 'size', ''), ('12', '3', '150', 'product', 'size', ''), ('13', '4', '180', 'product', 'size', ''), ('14', '10', '待支付', 'orders', 'state', ''), ('15', '20', '已支付', 'orders', 'state', ''), ('16', '30', '已发货', 'orders', 'state', ''), ('17', '40', '已收货', 'orders', 'state', ''), ('28', '1', '在线租赁', 'payment', 'pay_business', ''), ('29', '1', '支付宝', 'payment', 'platform', ''), ('30', '2', '微信', 'payment', 'platform', ''), ('33', '0', '正常', 'users', 'status', ''), ('34', '1', '封号', 'users', 'status', ''), ('35', '2', '禁言', 'users', 'status', ''), ('36', '3', '删除', 'users', 'status', ''), ('54', '0', '坦克', 'users', 'tag', ''), ('55', '1', 'ADC', 'users', 'tag', ''), ('56', '2', '打野', 'users', 'tag', ''), ('57', '3', 'AP', 'users', 'tag', ''), ('58', '0', '普通', 'test_info', 'status', ''), ('59', '1', '禁用', 'test_info', 'status', ''), ('60', '1', '潜水', 'test_info', 'tag', ''), ('61', '2', '冒泡', 'test_info', 'tag', ''), ('62', '3', '活跃', 'test_info', 'tag', ''), ('63', '4', '水货', 'test_info', 'tag', ''), ('64', '5', '喷子', 'test_info', 'tag', ''), ('65', '6', '山炮', 'test_info', 'tag', ''), ('148', '10', '待支付', 'v_orders', 'state', ''), ('149', '20', '已支付', 'v_orders', 'state', ''), ('150', '30', '已发货', 'v_orders', 'state', ''), ('151', '40', '已收货', 'v_orders', 'state', ''), ('152', '1', '正常', 'links', 'status', ''), ('153', '2', '禁用', 'links', 'status', ''), ('158', '0', '国', 'area', 'lv', ''), ('159', '1', '省', 'area', 'lv', ''), ('160', '2', '市', 'area', 'lv', ''), ('161', '3', '区', 'area', 'lv', ''), ('198', '1', '普通商户', 'hotel', 'state', ''), ('199', '2', '签约商户', 'hotel', 'state', ''), ('200', '1', '租赁商品', 'product', 'type', ''), ('201', '2', '积分商品', 'product', 'type', ''), ('202', '0', '禁用', 'wx_admin', 'status', ''), ('203', '1', '可用', 'wx_admin', 'status', ''), ('204', '0', '兼容模式', 'wx_config', 'encrypt', ''), ('205', '1', '安全模式', 'wx_config', 'encrypt', ''), ('206', '0', '文本', 'wx_submsg', 'type', ''), ('207', '1', '图文', 'wx_submsg', 'type', ''), ('208', '2', '红包', 'wx_submsg', 'type', ''), ('209', '3', '图片', 'wx_submsg', 'type', ''), ('210', '1', '图片', 'wx_material', 'type', ''), ('211', '2', '图文', 'wx_material', 'type', ''), ('212', '1', '回复', 'wx_message', 'type', ''), ('213', '2', '接受', 'wx_message', 'type', ''), ('214', '1', '男性', 'wx_user', 'sex', ''), ('215', '2', '女性', 'wx_user', 'sex', ''), ('216', '0', '未知', 'wx_user', 'sex', ''), ('217', ' 1', '文本', 'wx_keyword', 'type', ''), ('218', '2', '图文', 'wx_keyword', 'type', ''), ('219', '1', '有效', 'wx_keyword', 'status', ''), ('220', '0', '无效', 'wx_keyword', 'status', ''), ('221', '1', '有效', 'wx_config', 'status', ''), ('222', '0', '无效', 'wx_config', 'status', '');
+INSERT INTO `dicts` VALUES ('1', '1', '被套', 'product', 'category', ''), ('2', '2', '床单', 'product', 'category', ''), ('3', '3', '浴巾', 'product', 'category', ''), ('4', '4', '毛巾', 'product', 'category', ''), ('5', '5', '枕套', 'product', 'category', ''), ('6', '1', '纯棉', 'product', 'stuff', ''), ('7', '2', '涤纶', 'product', 'stuff', ''), ('8', '3', '纺纱', 'product', 'stuff', ''), ('9', '4', '轻纱', 'product', 'stuff', ''), ('10', '1', '90', 'product', 'size', ''), ('11', '2', '120', 'product', 'size', ''), ('12', '3', '150', 'product', 'size', ''), ('13', '4', '180', 'product', 'size', ''), ('14', '10', '待支付', 'orders', 'state', ''), ('15', '20', '已支付', 'orders', 'state', ''), ('16', '30', '已发货', 'orders', 'state', ''), ('17', '40', '已收货', 'orders', 'state', ''), ('28', '1', '在线租赁', 'payment', 'pay_business', ''), ('29', '1', '支付宝', 'payment', 'platform', ''), ('30', '2', '微信', 'payment', 'platform', ''), ('33', '0', '正常', 'users', 'status', ''), ('34', '1', '封号', 'users', 'status', ''), ('35', '2', '禁言', 'users', 'status', ''), ('36', '3', '删除', 'users', 'status', ''), ('54', '0', '坦克', 'users', 'tag', ''), ('55', '1', 'ADC', 'users', 'tag', ''), ('56', '2', '打野', 'users', 'tag', ''), ('57', '3', 'AP', 'users', 'tag', ''), ('58', '0', '普通', 'test_info', 'status', ''), ('59', '1', '禁用', 'test_info', 'status', ''), ('60', '1', '潜水', 'test_info', 'tag', ''), ('61', '2', '冒泡', 'test_info', 'tag', ''), ('62', '3', '活跃', 'test_info', 'tag', ''), ('63', '4', '水货', 'test_info', 'tag', ''), ('64', '5', '喷子', 'test_info', 'tag', ''), ('65', '6', '山炮', 'test_info', 'tag', ''), ('148', '10', '待支付', 'v_orders', 'state', ''), ('149', '20', '已支付', 'v_orders', 'state', ''), ('150', '30', '已发货', 'v_orders', 'state', ''), ('151', '40', '已收货', 'v_orders', 'state', ''), ('152', '1', '正常', 'links', 'status', ''), ('153', '2', '禁用', 'links', 'status', ''), ('158', '0', '国', 'area', 'lv', ''), ('159', '1', '省', 'area', 'lv', ''), ('160', '2', '市', 'area', 'lv', ''), ('161', '3', '区', 'area', 'lv', ''), ('198', '1', '普通商户', 'hotel', 'state', ''), ('199', '2', '签约商户', 'hotel', 'state', ''), ('200', '1', '租赁商品', 'product', 'type', ''), ('201', '2', '积分商品', 'product', 'type', ''), ('227', '1', '男性', 'wx_user', 'sex', ''), ('228', '2', '女性', 'wx_user', 'sex', ''), ('229', '0', '未知', 'wx_user', 'sex', ''), ('236', '1', '回复', 'wx_message', 'type', ''), ('237', '2', '接受', 'wx_message', 'type', ''), ('238', '0', '文本', 'wx_submsg', 'type', ''), ('239', '1', '图文', 'wx_submsg', 'type', ''), ('240', '2', '图片', 'wx_submsg', 'type', ''), ('241', '1', '有效', 'wx_submsg', 'status', ''), ('242', '0', '无效', 'wx_submsg', 'status', ''), ('243', '0', '禁用', 'wx_admin', 'status', ''), ('244', '1', '可用', 'wx_admin', 'status', ''), ('245', '0', '兼容模式', 'wx_config', 'encrypt', ''), ('246', '1', '安全模式', 'wx_config', 'encrypt', ''), ('247', '1', '有效', 'wx_config', 'status', ''), ('248', '0', '无效', 'wx_config', 'status', ''), ('249', '1', '图片', 'wx_material', 'type', ''), ('250', '2', '图文', 'wx_material', 'type', ''), ('251', '1', '有效', 'wx_material', 'status', ''), ('252', '0', '无效', 'wx_material', 'status', ''), ('257', '1', '文本', 'wx_keyword', 'type', ''), ('258', '2', '图文', 'wx_keyword', 'type', ''), ('259', '1', '有效', 'wx_keyword', 'status', ''), ('260', '0', '无效', 'wx_keyword', 'status', ''), ('261', '1', '有效', 'wx_custommenu', 'status', ''), ('262', '0', '无效', 'wx_custommenu', 'status', ''), ('275', '1', '男', 'wx_matchrulemenu', 'sex', ''), ('276', '2', '女', 'wx_matchrulemenu', 'sex', ''), ('277', '1', 'IOS', 'wx_matchrulemenu', 'client_platform_type', ''), ('278', '2', 'Android', 'wx_matchrulemenu', 'client_platform_type', ''), ('279', '3', ' Others', 'wx_matchrulemenu', 'client_platform_type', ''), ('280', '1', '有效', 'wx_matchrulemenu', 'status', ''), ('281', '0', '无效', 'wx_matchrulemenu', 'status', '');
 COMMIT;
 
 -- ----------------------------
@@ -505,13 +505,13 @@ CREATE TABLE `wx_admin` (
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `wx_admin`
 -- ----------------------------
 BEGIN;
-INSERT INTO `wx_admin` VALUES ('1', 'Javen', '13545191278', '572839485@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '1', '1', '深圳', '2017-06-01 15:38:58', '2017-06-02 10:12:46'), ('2', 'Javen.zhou', '13545191278', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '0', '深圳', '2017-06-01 15:57:15', '2017-06-02 10:27:03'), ('3', 'CM001', '13545191277', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '1', '', '2017-06-01 16:04:46', '2017-06-01 16:09:32'), ('4', 'Test1', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '1', '', '2017-06-02 16:23:29', '2017-06-02 16:23:29'), ('5', 'Test2', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5695', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('6', 'Test3', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5696', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('7', 'Test4', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5697', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('8', 'Test5', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5698', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('9', 'Test6', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5699', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('10', 'Test7', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5700', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00');
+INSERT INTO `wx_admin` VALUES ('1', 'Javen', '13545191278', '572839485@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '1', '1', '深圳', '2017-06-01 15:38:58', '2017-06-02 10:12:46'), ('2', 'Javen.zhou', '13545191278', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '0', '深圳', '2017-06-01 15:57:15', '2017-06-02 10:27:03'), ('3', 'CM001', '13545191277', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '1', '', '2017-06-01 16:04:46', '2017-06-01 16:09:32'), ('4', 'Test1', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5694', '5', '1', '', '2017-06-02 16:23:29', '2017-06-02 16:23:29'), ('5', 'Test2', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5695', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('6', 'Test3', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5696', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('7', 'Test4', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5697', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('8', 'Test5', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5698', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('9', 'Test6', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5699', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('10', 'Test7', '13545191276', 'qq@qq.com', '89BDF69372C2EF53EA409CDF020B5700', '5', '1', null, '0006-02-17 16:23:00', '0006-02-17 16:23:00'), ('11', 'Test68', '12345678901', 'qq@qq.com', '111111111111', '1', '1', null, '2017-06-10 14:25:13', '2017-06-10 14:25:13');
 COMMIT;
 
 -- ----------------------------
@@ -527,9 +527,14 @@ CREATE TABLE `wx_config` (
   `token` varchar(255) NOT NULL DEFAULT 'Javen' COMMENT '令牌',
   `encrypt` int(1) NOT NULL DEFAULT '0' COMMENT '是否加密：0=兼容模式,1=安全模式',
   `encrypt_key` varchar(255) DEFAULT NULL COMMENT '加密密钥',
+  `mch_id` varchar(255) DEFAULT NULL COMMENT '商户ID',
+  `api_key` varchar(255) DEFAULT NULL COMMENT 'API密钥',
+  `certPath` varchar(255) DEFAULT NULL COMMENT '证书路径',
+  `domain` varchar(255) DEFAULT NULL COMMENT '授权域名',
+  `subscribe_url` varchar(255) DEFAULT NULL COMMENT '未关注跳转页',
+  `status` int(1) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   `create_time` datetime NOT NULL COMMENT '创建时间',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
@@ -537,7 +542,38 @@ CREATE TABLE `wx_config` (
 --  Records of `wx_config`
 -- ----------------------------
 BEGIN;
-INSERT INTO `wx_config` VALUES ('1', '1', '1', 'wx100', '111111', 'Javen', '1', '111111', '2017-06-02 14:49:21', '2017-06-02 14:49:21', '1'), ('2', '3', '2', 'wx22222', '222222', 'Javen', '0', '2222222', '2017-06-03 16:44:50', '2017-06-02 14:49:40', '1'), ('3', '4', '3', 'wx1011', '1111111', 'Javen', '1', '111111', '2017-06-02 16:36:44', '2017-02-17 16:24:00', '1'), ('4', '5', '4', 'wx1001', '2222', 'Javen', '0', '4444', '2017-06-02 16:36:52', '2017-02-17 16:24:00', '1'), ('5', '6', '5', 'wx1002', '2223', 'Javen', '0', '4445', '2017-06-02 16:36:59', '2017-02-17 16:24:00', '1'), ('6', '7', '6', 'wx1003', '2224', 'Javen', '0', '4446', '2017-06-02 16:48:07', '2017-02-17 16:24:00', '1'), ('7', '2', '7', 'wx1004', '2225', 'Javen', '0', '4447', '2017-02-17 16:24:00', '2017-02-17 16:24:00', '1'), ('8', '1', '8', 'wx1005', '2226', 'Javen', '0', '4448', '2017-02-17 16:24:00', '2017-02-17 16:24:00', '1'), ('9', '1', '922323', 'wx1006', '2227', 'Javen', '0', '44555555555555', '2017-06-03 15:49:39', '2017-02-17 16:24:00', '1'), ('10', '1', '1496476393515', 'wx22222', '11111111111', 'Javen', '0', '111111111', '2017-06-03 15:53:13', '2017-06-03 15:53:13', '1');
+INSERT INTO `wx_config` VALUES ('1', '1', '123456', 'wx614c453e0d1dcd12', '19a02e4927d346484fc70327970457f9', 'Javen', '0', '', '1', '1', '1', '1', null, '1', '2017-06-02 14:49:21', '2017-06-02 14:49:21'), ('2', '3', '2', 'wxcm001', '222222', 'Javen', '0', '2222222', '', '', '', '', '', '1', '2017-06-24 18:18:15', '2017-06-02 14:49:40'), ('3', '4', '3', 'wx1011', '1111111', 'Javen', '1', '111111', null, null, null, null, null, '1', '2017-06-02 16:36:44', '2017-02-17 16:24:00'), ('4', '5', '4', 'wx1001', '2222', 'Javen', '0', '4444', null, null, null, null, null, '1', '2017-06-02 16:36:52', '2017-02-17 16:24:00'), ('5', '6', '5', 'wx1002', '2223', 'Javen', '0', '4445', null, null, null, null, null, '1', '2017-06-02 16:36:59', '2017-02-17 16:24:00'), ('6', '7', '6', 'wx1003', '2224', 'Javen', '0', '4446', null, null, null, null, null, '1', '2017-06-02 16:48:07', '2017-02-17 16:24:00'), ('7', '2', '7', 'wx1004', '2225', 'Javen', '0', '4447', null, null, null, null, null, '1', '2017-02-17 16:24:00', '2017-02-17 16:24:00'), ('8', '1', '8', 'wx1005', '2226', 'Javen', '0', '4448', null, null, null, null, null, '1', '2017-02-17 16:24:00', '2017-02-17 16:24:00'), ('9', '1', '922323', 'wx1006', '2227', 'Javen', '0', '44555555555555', null, null, null, null, null, '1', '2017-06-03 15:49:39', '2017-02-17 16:24:00'), ('10', '1', '1496476393515', 'wx22222', '11111111111', 'Javen', '0', '111111111', null, null, null, null, null, '0', '2017-06-03 15:53:13', '2017-06-03 15:53:13');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `wx_custommenu`
+-- ----------------------------
+DROP TABLE IF EXISTS `wx_custommenu`;
+CREATE TABLE `wx_custommenu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `pid` int(11) DEFAULT '0' COMMENT '父节点',
+  `app_id` varchar(255) NOT NULL COMMENT '开发者ID',
+  `type_id` int(11) NOT NULL DEFAULT '11' COMMENT '菜单类型',
+  `name` varchar(255) NOT NULL COMMENT '菜单名称',
+  `url` varchar(255) DEFAULT NULL COMMENT '网页链接',
+  `key` varchar(255) DEFAULT NULL COMMENT '菜单key值',
+  `media_id` varchar(255) DEFAULT NULL COMMENT '素材id',
+  `sort` int(11) DEFAULT '1' COMMENT '排序',
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
+  `xappid` varchar(255) DEFAULT NULL COMMENT '小程序的appid',
+  `pagepath` varchar(255) DEFAULT NULL COMMENT '小程序的页面路径',
+  `menu_group` int(11) NOT NULL DEFAULT '0' COMMENT '菜单组',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `remake` varchar(255) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Records of `wx_custommenu`
+-- ----------------------------
+BEGIN;
+INSERT INTO `wx_custommenu` VALUES ('1', '0', 'wx614c453e0d1dcd12', '11', '扫码', '', '', '', '1', '1', null, null, '0', '2017-06-18 14:51:42', '2017-06-18 14:55:31', '主菜单扫码'), ('2', '1', 'wx614c453e0d1dcd12', '4', '扫码带提示', '', 'rselfmenu_0_0', '', '1', '1', null, null, '0', '2017-06-18 14:56:16', '2017-06-18 15:00:29', '扫码'), ('3', '1', 'wx614c453e0d1dcd12', '3', '扫码推事件', '', 'rselfmenu_0_1', '', '2', '1', null, null, '0', '2017-06-18 15:00:59', '2017-06-18 15:02:35', '扫码'), ('4', '0', 'wx614c453e0d1dcd12', '11', '多媒体', '', '', '', '2', '1', null, null, '0', '2017-06-18 15:03:21', '2017-06-18 15:03:42', '主菜单多媒体'), ('5', '4', 'wx614c453e0d1dcd12', '5', '系统拍照发图', '', 'rselfmenu_1_0', '', '1', '1', null, null, '0', '2017-06-18 15:04:02', '2017-06-18 15:04:36', '发图'), ('6', '4', 'wx614c453e0d1dcd12', '6', '拍照或者相册发图', '', 'rselfmenu_1_1', '', '2', '1', null, null, '0', '2017-06-18 15:04:51', '2017-06-18 15:05:28', '发图'), ('7', '4', 'wx614c453e0d1dcd12', '7', '微信相册发图', '', 'rselfmenu_1_2', '', '3', '1', null, null, '0', '2017-06-18 15:05:52', '2017-06-18 15:06:34', '发图'), ('8', '0', 'wx614c453e0d1dcd12', '11', '个人中心', '', '', '', '3', '1', null, null, '0', '2017-06-18 15:15:13', '2017-06-18 15:15:16', '主菜单个人中心'), ('9', '8', 'wx614c453e0d1dcd12', '1', '点击事件', '', 'rselfmenu_2_0', '', '1', '1', null, null, '0', '2017-06-18 15:18:39', '2017-06-18 15:18:42', '点击事件'), ('10', '8', 'wx614c453e0d1dcd12', '8', '发送位置', '', 'rselfmenu_2_1', '', '2', '1', null, null, '0', '2017-06-18 15:21:17', '2017-06-18 15:21:20', '发送位置'), ('11', '8', 'wx614c453e0d1dcd12', '2', '我的博客', 'http://blog.csdn.net/zyw_java', 'rselfmenu_2_2', '', '3', '1', null, null, '0', '2017-06-18 15:22:16', '2017-06-18 15:22:19', '我的博客'), ('12', '8', 'wx614c453e0d1dcd12', '2', '在线咨询', 'http://wpa.qq.com/msgrd?v=3&uin=572839485&site=qq&menu=yes', 'rselfmenu_2_3', '', '4', '1', null, null, '0', '2017-06-18 15:24:29', '2017-06-18 15:24:32', '在线咨询'), ('13', '8', 'wx614c453e0d1dcd12', '2', '我的设备', 'https://hw.weixin.qq.com/devicectrl/panel/device-list.html?appid=wx614c453e0d1dcd12', 'rselfmenu_2_4', '', '5', '1', null, null, '0', '2017-06-18 15:26:37', '2017-06-18 15:26:40', '我的设备'), ('14', '4', 'wx614c453e0d1dcd12', '9', '图片', '', '', 'xxxxx', '4', '0', null, null, '0', '2017-06-18 15:29:31', '2017-06-18 15:29:35', '图片'), ('15', '4', 'wx614c453e0d1dcd12', '10', '图文', '', '', 'xxx', '5', '0', null, null, '0', '2017-06-18 15:31:02', '2017-06-18 15:31:05', '图文'), ('17', '0', 'wx614c453e0d1dcd12', '11', '个性化菜单', '', '', '', '1', '1', '', '', '1', '2017-06-24 13:42:20', '2017-06-24 13:42:23', ''), ('18', '17', 'wx614c453e0d1dcd12', '2', '微信专栏', 'http://blog.csdn.net/column/details/14826.html', '', '', '1', '1', '', '', '1', '2017-06-24 13:43:27', '2017-06-24 13:43:30', ''), ('19', '0', 'wx614c453e0d1dcd12', '11', '个性化菜单2', '', '', '', '1', '1', '', '', '2', '2017-06-24 14:40:02', '2017-06-24 14:40:04', ''), ('20', '19', 'wx614c453e0d1dcd12', '2', '微信专栏', 'http://blog.csdn.net/column/details/14826.html', '', '', '1', '1', '', '', '2', '2017-06-24 14:40:51', '2017-06-24 14:40:53', ''), ('21', '19', 'wx614c453e0d1dcd12', '2', '你有个性吗？', 'http://blog.csdn.net/column/details/14826.html', '', '', '3', '1', '', '', '2', '2017-06-24 15:08:39', '2017-06-24 15:08:41', ''), ('22', '0', 'wxcm001', '11', '测试', '', '', '', '1', '1', '', '', '1', '2017-06-24 18:20:57', '2017-06-24 18:23:10', ''), ('23', '22', 'wxcm001', '1', '我的', '', '123', '', '1', '1', '', '', '2', '2017-06-24 18:21:31', '2017-06-24 18:21:31', '');
 COMMIT;
 
 -- ----------------------------
@@ -547,7 +583,7 @@ DROP TABLE IF EXISTS `wx_keyword`;
 CREATE TABLE `wx_keyword` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
   `app_id` varchar(255) NOT NULL DEFAULT '' COMMENT '开发者ID ',
-  `type` int(1) NOT NULL DEFAULT '1' COMMENT '消息类型: 1=文本,2=图文',
+  `type` int(1) NOT NULL DEFAULT '1' COMMENT '消息类型:1=文本,2=图文',
   `key_word` varchar(255) NOT NULL COMMENT '关键字',
   `content` text NOT NULL COMMENT '回复内容',
   `status` int(1) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
@@ -555,7 +591,42 @@ CREATE TABLE `wx_keyword` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remake` varchar(255) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Records of `wx_keyword`
+-- ----------------------------
+BEGIN;
+INSERT INTO `wx_keyword` VALUES ('2', 'wx614c453e0d1dcd12', '1', '欢迎', '欢迎使用 -By Javen', '1', '2017-06-11 17:18:28', '2017-06-11 17:18:30', ''), ('3', 'wx614c453e0d1dcd12', '1', '你是谁', '我是Javen', '1', '2017-06-11 17:19:34', '2017-06-11 17:19:37', ''), ('4', 'wx614c453e0d1dcd12', '2', '图文测试', '关注', '1', '2017-06-11 17:46:37', '2017-06-11 17:46:39', ''), ('5', 'wx614c453e0d1dcd12', '2', '保时捷', '保时捷', '1', '2017-06-11 19:52:56', '2017-06-11 19:53:03', ''), ('6', 'wx614c453e0d1dcd12', '1', '123', '111111', '0', null, null, '无效');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `wx_matchrulemenu`
+-- ----------------------------
+DROP TABLE IF EXISTS `wx_matchrulemenu`;
+CREATE TABLE `wx_matchrulemenu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `app_id` varchar(255) NOT NULL COMMENT '开发者编号',
+  `tag_id` varchar(255) DEFAULT NULL COMMENT '用户标签',
+  `sex` varchar(11) DEFAULT NULL COMMENT '性别:1=男,2=女',
+  `client_platform_type` varchar(11) DEFAULT NULL COMMENT '客户端版本:1=IOS,2=Android,3= Others',
+  `country` varchar(255) DEFAULT NULL COMMENT '国家信息',
+  `province` varchar(255) DEFAULT NULL COMMENT '省份信息',
+  `city` varchar(255) DEFAULT NULL COMMENT '城市信息',
+  `language` varchar(255) DEFAULT NULL COMMENT '语言信息',
+  `menu_group` int(11) NOT NULL COMMENT '菜单组',
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `wx_matchrulemenu`
+-- ----------------------------
+BEGIN;
+INSERT INTO `wx_matchrulemenu` VALUES ('1', 'wx614c453e0d1dcd12', '', '2', null, '', '', '', '', '1', '1', '2017-06-24 13:44:34', '2017-06-24 13:44:36'), ('2', 'wx614c453e0d1dcd12', '', null, '2', '', '', '', '', '2', '0', '2017-06-24 14:43:10', '2017-06-24 14:43:12'), ('3', 'wxcm001', '', '1', null, '', '', '', '', '1', '1', '2017-06-24 18:18:45', '2017-06-24 18:18:45'), ('4', 'wxcm001', '', '2', null, '', '', '', '', '2', '1', '2017-06-24 18:20:14', '2017-06-24 18:20:14');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `wx_material`
@@ -564,22 +635,46 @@ DROP TABLE IF EXISTS `wx_material`;
 CREATE TABLE `wx_material` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
   `app_id` varchar(255) NOT NULL COMMENT '开发者ID',
+  `keyword` varchar(255) DEFAULT NULL COMMENT '关键字',
   `type` int(11) NOT NULL DEFAULT '2' COMMENT '类型:1=图片,2=图文',
+  `url` varchar(255) DEFAULT NULL COMMENT '文章链接',
   `image_url` varchar(255) DEFAULT NULL COMMENT '图片地址',
   `title` varchar(255) NOT NULL COMMENT '标题',
   `content` text COMMENT '内容',
   `describe` varchar(255) NOT NULL COMMENT '描述',
   `author` varchar(255) DEFAULT NULL COMMENT '作者',
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `wx_material`
 -- ----------------------------
 BEGIN;
-INSERT INTO `wx_material` VALUES ('1', 'wx22222', '1', '1496479220484.jpg', '测试1', '', '测试图片', 'Javen', '2017-06-03 16:40:44', '2017-06-03 17:01:47'), ('2', 'wx22222', '2', '', 'xx', '<p>xxx</p>', 'xx', 'xxx', '2017-06-03 17:03:54', '2017-06-03 17:03:54'), ('3', 'wx100', '2', '', 'ssssf', '<p>sfa</p>', 'fasfd', 'fasdfa', '2017-06-03 17:14:07', '2017-06-03 17:14:07');
+INSERT INTO `wx_material` VALUES ('1', 'wx614c453e0d1dcd12', '关注', '2', 'http://blog.csdn.net/column/details/14826.html', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497186578387&di=f4cbb821da6ecf3e071c12f617bda1ff&imgtype=0&src=http%3A%2F%2Ftupian.enterdesk.com%2F2014%2Fmxy%2F02%2F11%2F4%2F4.jpg', '微信开发专栏CSDN', '微信开发专栏CSDN', '微信开发专栏CSDN', 'Javen', '1', '2017-06-03 16:40:44', '2017-06-03 17:01:47'), ('2', 'wx614c453e0d1dcd12', '关注', '2', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497186711930&di=10fb5ed5953163ff4b239a2b3d87bcda&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160821%2F9-160R1150K2.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497186711930&di=10fb5ed5953163ff4b239a2b3d87bcda&imgtype=0&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F160821%2F9-160R1150K2.jpg', '美图欣赏', '美图欣赏', '美图欣赏', 'baidu', '1', '2017-06-03 17:03:54', '2017-06-03 17:03:54'), ('3', 'wx614c453e0d1dcd12', '关注', '2', 'http://www.jianshu.com/u/9be31238fda1', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497186746708&di=b3aa674c2a19471d2504714bcdc0243a&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140326%2F235113-1403260U22059.jpg', '微信开发专栏简书', '微信开发专栏简书', '微信开发专栏简书', 'Javen', '1', '2017-06-03 17:14:07', '2017-06-03 17:14:07'), ('4', 'wx614c453e0d1dcd12', '关注', '2', 'http://git.oschina.net/javen205/IJPay', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497188779665&di=3dd9bb303371099861467ca6e2a67c34&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1308%2F17%2Fc6%2F24564406_1376704633091.jpg', 'IJPay 让支付触手可及，实现微信、支付宝系列支付', 'IJPay 让支付触手可及，实现微信、支付宝系列支付', 'IJPay 让支付触手可及，实现微信、支付宝系列支付', 'Javen', '1', '2017-06-11 19:02:00', '2017-06-11 19:02:10'), ('5', 'wx614c453e0d1dcd12', '关注', '2', 'http://git.oschina.net/javen205/JPay', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497188912918&di=0205ddf01a30de1e84e3d3d81b9f3560&imgtype=0&src=http%3A%2F%2Fimg.cheshi-img.com%2F201205%2F585720%2F4fc447810c1de.jpg', 'Android 微信、支付App支付SDK', 'Android 微信、支付App支付SDK', 'Android 微信、支付App支付SDK', 'Javen', '1', '2017-06-11 19:02:04', '2017-06-11 19:02:14'), ('6', 'wx614c453e0d1dcd12', '保时捷', '2', 'http://7j1wfp.com1.z0.glb.clouddn.com/porsche.jpeg', 'http://7j1wfp.com1.z0.glb.clouddn.com/porsche.jpeg', '保时捷', null, '保时捷Cayenne Turbo S', 'Javen', '1', '2017-06-11 19:52:24', '2017-06-11 19:52:28');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `wx_menutype`
+-- ----------------------------
+DROP TABLE IF EXISTS `wx_menutype`;
+CREATE TABLE `wx_menutype` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `type_name` varchar(255) NOT NULL COMMENT '类型名称',
+  `describe` varchar(255) NOT NULL COMMENT '描述',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  `remake` varchar(255) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+--  Records of `wx_menutype`
+-- ----------------------------
+BEGIN;
+INSERT INTO `wx_menutype` VALUES ('1', 'click', '用户点击click类型按钮后，微信服务器会通过消息接口推送消息类型为event	的结构给开发者（参考消息接口指南），并且带上按钮中开发者填写的key值，开发者可以通过自定义的key值与用户进行交互；', '2016-01-03 16:59:24', '2017-06-18 14:40:06', '点击推事件'), ('2', 'view', '用户点击view类型按钮后，微信客户端将会打开开发者在按钮中填写的网页URL，可与网页授权获取用户基本信息接口结合，获得用户基本信息。', '2016-01-03 16:59:24', '2017-06-18 14:40:10', '跳转URL'), ('3', 'scancode_push', '用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后显示扫描结果（如果是URL，将进入URL），且会将扫码的结果传给开发者，开发者可以下发消息。', '2016-01-03 16:59:24', '2017-06-18 14:40:13', '扫码推事件'), ('4', 'scancode_waitmsg', '用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后，将扫码的结果传给开发者，同时收起扫一扫工具，然后弹出“消息接收中”提示框，随后可能会收到开发者下发的消息。', '2016-01-03 16:59:24', '2017-06-18 14:40:16', '扫码推事件且弹出“消息接收中”提示框'), ('5', 'pic_sysphoto', '用户点击按钮后，微信客户端将调起系统相机，完成拍照操作后，会将拍摄的相片发送给开发者，并推送事件给开发者，同时收起系统相机，随后可能会收到开发者下发的消息。', '2016-01-03 16:59:24', '2017-06-18 14:40:19', '弹出系统拍照发图'), ('6', 'pic_photo_or_album', '用户点击按钮后，微信客户端将弹出选择器供用户选择“拍照”或者“从手机相册选择”。用户选择后即走其他两种流程。', '2016-01-03 16:59:24', '2017-06-18 14:40:23', '弹出拍照或者相册发图'), ('7', 'pic_weixin', '用户点击按钮后，微信客户端将调起微信相册，完成选择操作后，将选择的相片发送给开发者的服务器，并推送事件给开发者，同时收起相册，随后可能会收到开发者下发的消息。', '2016-01-03 16:59:24', '2017-06-18 14:40:26', '弹出微信相册发图器'), ('8', 'location_select', '用户点击按钮后，微信客户端将调起地理位置选择工具，完成选择操作后，将选择的地理位置发送给开发者的服务器，同时收起位置选择工具，随后可能会收到开发者下发的消息。', '2016-01-03 16:59:24', '2017-06-18 14:40:30', '弹出地理位置选择器'), ('9', 'media_id', '用户点击media_id类型按钮后，微信服务器会将开发者填写的永久素材id对应的素材下发给用户，永久素材类型可以是图片、音频、视频、图文消息。请注意：永久素材id必须是在“素材管理/新增永久素材”接口上传后获得的合法id。', '2016-01-03 16:59:24', '2017-06-18 14:40:33', '下发消息（除文本消息）'), ('10', 'view_limited', '用户点击view_limited类型按钮后，微信客户端将打开开发者在按钮中填写的永久素材id对应的图文消息URL，永久素材类型只支持图文消息。请注意：永久素材id必须是在“素材管理/新增永久素材”接口上传后获得的合法id。', '2016-01-03 16:59:24', '2017-06-18 14:40:36', '跳转图文消息URL'), ('11', 'main', '子菜单', '2016-01-03 16:59:24', '2016-01-03 17:26:16', '子菜单'), ('12', 'miniprogram', '小程序', '2017-06-18 17:49:03', '2017-06-18 17:49:05', null);
 COMMIT;
 
 -- ----------------------------
@@ -605,26 +700,54 @@ INSERT INTO `wx_message` VALUES ('1', 'wx100', 'fasfda', '1', 'fasfa', '2017-06-
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `wx_redpack`
+-- ----------------------------
+DROP TABLE IF EXISTS `wx_redpack`;
+CREATE TABLE `wx_redpack` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
+  `app_id` varchar(255) NOT NULL COMMENT '开发者ID',
+  `send_name` varchar(255) NOT NULL COMMENT '商户名称',
+  `total_amount` int(11) NOT NULL COMMENT '付款金额(单位:分)',
+  `total_num` int(11) NOT NULL DEFAULT '1' COMMENT '红包发放总人数',
+  `wishing` varchar(128) NOT NULL COMMENT '红包祝福语',
+  `act_name` varchar(32) NOT NULL COMMENT '活动名称',
+  `remark` varchar(256) NOT NULL COMMENT '备注',
+  `scene_id` varchar(255) DEFAULT NULL COMMENT '场景id',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `wx_redpack`
+-- ----------------------------
+BEGIN;
+INSERT INTO `wx_redpack` VALUES ('1', '1', 'wx614c453e0d1dcd12', 'Javen极速开发', '1000', '1', '感谢关注', '快抢红包', '赶紧分享让更多伙伴知道', null, '2017-06-17 17:29:56', '2017-06-17 17:29:59');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `wx_submsg`
 -- ----------------------------
 DROP TABLE IF EXISTS `wx_submsg`;
 CREATE TABLE `wx_submsg` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
   `app_id` varchar(255) NOT NULL COMMENT '开发者ID',
-  `type` int(11) NOT NULL DEFAULT '0' COMMENT '回复类型:0=文本,1=图文,2=红包,3=图片',
-  `money` int(11) DEFAULT '1' COMMENT '红包金额',
+  `type` int(11) NOT NULL DEFAULT '0' COMMENT '回复类型:0=文本,1=图文,2=图片',
+  `redpack_id` int(11) DEFAULT NULL COMMENT '红包编号',
   `article_key` varchar(255) DEFAULT NULL COMMENT '文章关键词',
   `content` text COMMENT '内容',
+  `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态:1=有效,0=无效',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `wx_submsg`
 -- ----------------------------
 BEGIN;
-INSERT INTO `wx_submsg` VALUES ('1', 'wx1004', '0', '1', '', '<p><b>Javen</b></p><p><br></p>', '2017-06-03 16:00:34', '2017-06-03 17:03:22'), ('2', 'wx22222', '0', '1', 'test', '<p>发生的发顺丰</p>', '2017-06-03 16:45:16', '2017-06-03 17:03:10'), ('3', 'wx1005', '0', '1', 'fasdfas', '<p>fasdfa</p>', '2017-06-03 16:57:33', '2017-06-03 17:03:17'), ('4', 'wx22222', '0', '1', 'xxxx', '<p>xxxx</p>', '2017-06-03 17:03:00', '2017-06-03 17:03:28'), ('5', 'wx100', '0', '1', '123', '<p>123</p>', '2017-06-03 17:22:34', '2017-06-03 17:22:34');
+INSERT INTO `wx_submsg` VALUES ('1', 'wx614c453e0d1dcd12', '0', null, '', '欢迎关注', '0', '2017-06-03 16:00:34', '2017-06-03 17:03:22'), ('2', 'wx614c453e0d1dcd12', '1', '1', '关注', '<p>发生的发顺丰</p>', '1', '2017-06-03 16:45:16', '2017-06-03 17:03:10'), ('3', 'wx614c453e0d1dcd12', '0', null, 'fasdfas', '<p>fasdfa</p>', '0', '2017-06-03 16:57:33', '2017-06-03 17:03:17'), ('4', 'wx22222', '0', null, 'xxxx', '<p>xxxx</p>', '1', '2017-06-03 17:03:00', '2017-06-03 17:03:28'), ('5', 'wx100', '0', null, '123', '<p>123</p>', '1', '2017-06-03 17:22:34', '2017-06-03 17:22:34'), ('6', 'wx614c453e0d1dcd12', '0', null, '', '测试', '0', '2017-06-24 13:24:29', '2017-06-24 13:24:29');
 COMMIT;
 
 -- ----------------------------
@@ -633,29 +756,29 @@ COMMIT;
 DROP TABLE IF EXISTS `wx_user`;
 CREATE TABLE `wx_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
-  `app_id` varchar(255) DEFAULT NULL COMMENT '开发者ID',
-  `open_id` varchar(255) DEFAULT NULL COMMENT '用户标示',
-  `subscribe_time` datetime DEFAULT NULL COMMENT '关注',
-  `unsubscribe_time` datetime DEFAULT NULL COMMENT '取消关注',
+  `app_id` varchar(255) NOT NULL COMMENT '开发者ID',
+  `open_id` varchar(255) NOT NULL COMMENT '用户标识',
+  `subscribe_time` varchar(255) DEFAULT NULL COMMENT '关注时间',
+  `unsubscribe_time` varchar(255) DEFAULT NULL COMMENT '取消时间',
   `nick_name` varchar(255) DEFAULT NULL COMMENT '昵称',
-  `unionid` varchar(255) DEFAULT NULL COMMENT 'unionid',
+  `unionid` varchar(255) DEFAULT NULL,
   `privilege` varchar(255) DEFAULT NULL COMMENT '特权信息',
-  `headimgurl` varchar(255) DEFAULT NULL COMMENT '图像',
-  `country` varchar(10) DEFAULT NULL COMMENT '国家',
-  `city` varchar(10) DEFAULT NULL COMMENT '城市',
-  `province` varchar(10) DEFAULT NULL COMMENT '省份',
-  `sex` int(1) DEFAULT '0' COMMENT '性别:1=男性,2=女性,0=未知',
+  `headimgurl` varchar(255) DEFAULT NULL COMMENT '用户图像',
+  `country` varchar(255) DEFAULT NULL COMMENT '国家',
+  `city` varchar(255) DEFAULT NULL COMMENT '城市',
+  `province` varchar(255) DEFAULT NULL COMMENT '省份',
+  `sex` int(11) DEFAULT NULL COMMENT '性别:1=男性,2=女性,0=未知',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
-  `update_time` datetime NOT NULL COMMENT '更新时间',
   `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `wx_user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `wx_user` VALUES ('2', 'wx100', 'sfasf', '2017-06-03 17:51:10', '2017-06-03 17:51:12', 'Javen', '', '', '', '', '', '', '1', '', '2017-06-03 17:56:41', '2017-06-03 17:51:36');
+INSERT INTO `wx_user` VALUES ('2', 'wx614c453e0d1dcd12', 'ofkJSuGtXgB8n23e-y0kqDjJLXxk', null, null, '*%EF%A3%BF%E0%B3%84%CB%9A%E0%BC%84Javen%E0%BC%A1%F0%9F%92%AF', 'osx1uvyJXeJh_DdgeTgw2eGhFSAU', null, 'http://wx.qlogo.cn/mmopen/XwCV8SHaDJI7F27oniaYZURnahC0wPC1UNBX6yLeXIEdXiaAektGrdQsDpuXQuG9VcoKLxqdL97oibt6AUBEEsV7BxtAVLicxsPZ/0', '中国', '武汉', '湖北', '1', null, '2017-06-24 16:50:46', '2017-06-24 17:38:40'), ('3', 'wx614c453e0d1dcd12', 'ofkJSuL6kYUoIbknjbRY0EISgGEY', null, null, '123%EE%90%A8', 'osx1uvyYFjxVdJfGzvHAm3qCMKRM', null, 'http://wx.qlogo.cn/mmopen/WgfnSGmLEibO8RydBlicQoibzRiabhJ73ykb7seRA2xo1v3gMhZRdKU8ARIZ2a06gWRyVGYnoicR3PebQhicd9FNAFRh5SD9pzhQQ3/0', '中国', '深圳', '广东', '2', null, '2017-06-24 16:52:39', '2017-06-24 17:41:43');
 COMMIT;
 
 -- ----------------------------
