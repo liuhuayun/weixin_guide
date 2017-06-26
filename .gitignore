@@ -26,4 +26,5 @@ Thumbs.db
 overlays
 bin
 
-dev
+src/main/resources/dev/app.config
+src/main/resources/dev/jdbc.config

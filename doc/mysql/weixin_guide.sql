@@ -4,12 +4,12 @@
  Source Server         : localhost
  Source Server Version : 50627
  Source Host           : localhost
- Source Database       : oos
+ Source Database       : weixin_guide
 
  Target Server Version : 50627
  File Encoding         : utf-8
 
- Date: 06/24/2017 18:40:11 PM
+ Date: 06/26/2017 21:20:13 PM
 */
 
 SET NAMES utf8;
