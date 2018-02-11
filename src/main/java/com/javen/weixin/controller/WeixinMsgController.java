@@ -65,7 +65,7 @@ public class WeixinMsgController extends MsgControllerAdapter {
 				}
 				renderOutTextMsg(msgContent);
 		}else if (msgContent.equals("9") || "QQ咨询".equalsIgnoreCase(msgContent)) {
-			String url="http://wpa.qq.com/msgrd?v=3&uin=1472405080&site=qq&menu=yes";
+			String url="http://wpa.qq.com/msgrd?v=3&uin=568656253&site=qq&menu=yes";
 			String urlStr="<a href=\""+url+"\">点击咨询</a>";
 			renderOutTextMsg("QQ在线咨询"+urlStr);
 		}else if (msgContent.equals("微信支付")) {

@@ -96,6 +96,7 @@ public class APPConfig extends JFinalConfig {
 	/**
 	 * 配置常量
 	 */
+	@Override
 	public void configConstant(Constants me) {
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		loadProp("javen_config_pro.txt", "javen_config.txt");
@@ -201,6 +202,7 @@ public class APPConfig extends JFinalConfig {
 	@Override
 	public void afterJFinalStart() {
 		ApiConfigKit.putApiConfig(getApiConfig());
+		log.info("JFinal已启动==============》");
 	}
 
 	/**
