@@ -9,6 +9,7 @@ import com.alibaba.druid.wall.WallFilter;
 import com.javen.controller.AjaxController;
 import com.javen.controller.AjaxFileContorlller;
 import com.javen.controller.AllPayController;
+import com.javen.controller.ClientController;
 import com.javen.controller.ConstellationController;
 import com.javen.controller.FileController;
 import com.javen.controller.IndexController;
@@ -127,6 +128,7 @@ public class APPConfig extends JFinalConfig {
 		me.add("/ajax", AjaxController.class);
 		me.add("/constellation", ConstellationController.class, "/front");
 		me.add("/wxuser", UserController.class, "/front");
+		me.add("/client", ClientController.class, "/client");
 		me.add("/file", FileController.class, "/front");
 		me.add("/ajaxfile", AjaxFileContorlller.class, "/front");
 
