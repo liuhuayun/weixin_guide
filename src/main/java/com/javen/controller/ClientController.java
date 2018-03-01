@@ -12,4 +12,12 @@ public class ClientController extends Controller{
 		setAttr("clientInfo", clientInfo);
 		render("client.jsp");
 	}
+	
+	public void bannerSlider(){
+		render("slider.jsp");
+	}
+	
+	public void bannerSwipe(){
+		render("swipe.jsp");
+	}
 }
